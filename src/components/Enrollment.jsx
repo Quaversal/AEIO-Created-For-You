@@ -39,7 +39,7 @@ export default function Enrollment() {
           <Reveal>
             <span className="text-xs font-medium tracking-label text-iceblue">Enroll</span>
             <h2 className="mt-3 font-heading text-3xl font-semibold sm:text-4xl">Begin your child's journey</h2>
-            <p className="mt-4 max-w-md text-white/70">
+            <p className="mt-4 max-w-md text-white/85">
               Tell us a little about your learner. An advisor will follow up with program recommendations,
               scheduling options, and next steps.
             </p>
@@ -56,7 +56,7 @@ export default function Enrollment() {
           </Reveal>
 
           <Reveal delay={120}>
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur sm:p-8">
+            <div className="rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur sm:p-8">
               <AnimatePresence mode="wait">
                 {done ? (
                   <motion.div
@@ -69,7 +69,7 @@ export default function Enrollment() {
                       <Check className="h-7 w-7 text-iceblue" />
                     </span>
                     <h3 className="mt-4 font-heading text-2xl font-semibold">Thank you!</h3>
-                    <p className="mt-2 max-w-xs text-white/70">
+                    <p className="mt-2 max-w-xs text-white/85">
                       We've received your inquiry and will be in touch within one business day.
                     </p>
                     <button
@@ -91,32 +91,32 @@ export default function Enrollment() {
                     className="space-y-4"
                   >
                     <div>
-                      <label className="text-xs font-medium tracking-label text-white/60">Parent / Guardian Name</label>
+                      <label className="text-xs font-medium tracking-label text-white/80">Parent / Guardian Name</label>
                       <input
                         required
                         value={form.parent_name}
                         onChange={(e) => update("parent_name", e.target.value)}
-                        className="mt-1.5 w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/40 outline-none focus:border-iceblue"
+                        className="mt-1.5 w-full rounded-xl border border-white/25 bg-white/10 px-4 py-3 text-sm text-white placeholder-white/60 outline-none focus:border-iceblue"
                         placeholder="Jane Doe"
                       />
                     </div>
                     <div>
-                      <label className="text-xs font-medium tracking-label text-white/60">Email</label>
+                      <label className="text-xs font-medium tracking-label text-white/80">Email</label>
                       <input
                         required
                         type="email"
                         value={form.email}
                         onChange={(e) => update("email", e.target.value)}
-                        className="mt-1.5 w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/40 outline-none focus:border-iceblue"
+                        className="mt-1.5 w-full rounded-xl border border-white/25 bg-white/10 px-4 py-3 text-sm text-white placeholder-white/60 outline-none focus:border-iceblue"
                         placeholder="jane@email.com"
                       />
                     </div>
                     <div>
-                      <label className="text-xs font-medium tracking-label text-white/60">Student Grade Level</label>
+                      <label className="text-xs font-medium tracking-label text-white/80">Student Grade Level</label>
                       <select
                         value={form.student_grade}
                         onChange={(e) => update("student_grade", e.target.value)}
-                        className="mt-1.5 w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white outline-none focus:border-iceblue"
+                        className="mt-1.5 w-full rounded-xl border border-white/25 bg-white/10 px-4 py-3 text-sm text-white outline-none focus:border-iceblue"
                       >
                         {GRADES.map((g) => (
                           <option key={g} value={g} className="bg-slatedeep text-white">
@@ -126,12 +126,12 @@ export default function Enrollment() {
                       </select>
                     </div>
                     <div>
-                      <label className="text-xs font-medium tracking-label text-white/60">Message (optional)</label>
+                      <label className="text-xs font-medium tracking-label text-white/80">Message (optional)</label>
                       <textarea
                         value={form.message}
                         onChange={(e) => update("message", e.target.value)}
                         rows={3}
-                        className="mt-1.5 w-full resize-none rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/40 outline-none focus:border-iceblue"
+                        className="mt-1.5 w-full resize-none rounded-xl border border-white/25 bg-white/10 px-4 py-3 text-sm text-white placeholder-white/60 outline-none focus:border-iceblue"
                         placeholder="Tell us about your learner's interests and goals."
                       />
                     </div>
