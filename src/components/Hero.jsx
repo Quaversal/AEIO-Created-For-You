@@ -5,11 +5,11 @@ import Reveal from "./Reveal";
 const scrollTo = (id) => document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
 
 const PLAN = [
-  { s: "Math — fractions", v: "Live 10:00" },
-  { s: "Reading — folk tales", v: "Async" },
-  { s: "Science — plant life", v: "Project" },
-  { s: "Art — watercolor", v: "Fri 14:00" },
-];
+{ s: "Math — fractions", v: "Live 10:00" },
+{ s: "Reading — folk tales", v: "Async" },
+{ s: "Science — plant life", v: "Project" },
+{ s: "Art — watercolor", v: "Fri 14:00" }];
+
 
 export default function Hero() {
   return (
@@ -40,14 +40,14 @@ export default function Hero() {
               <div className="mt-8 flex flex-wrap gap-4">
                 <button
                   onClick={() => scrollTo("#enroll")}
-                  className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition hover:bg-primary/90"
-                >
+                  className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition hover:bg-primary/90">
+                  
                   Enroll Now <ArrowRight className="h-4 w-4" />
                 </button>
                 <button
                   onClick={() => scrollTo("#programs")}
-                  className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition hover:border-primary/40"
-                >
+                  className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition hover:border-primary/40">
+                  
                   Explore Programs
                 </button>
               </div>
@@ -55,22 +55,22 @@ export default function Hero() {
             <Reveal delay={320}>
               <div className="mt-8 flex items-center gap-4">
                 <div className="flex -space-x-2">
-                  {["AM", "JL", "RK", "TS"].map((x) => (
-                    <span
-                      key={x}
-                      className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-card bg-primary/15 text-xs font-semibold text-primary"
-                    >
+                  {["AM", "JL", "RK", "TS"].map((x) =>
+                  <span
+                    key={x}
+                    className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-card bg-primary/15 text-xs font-semibold text-primary">
+                    
                       {x}
                     </span>
-                  ))}
+                  )}
                 </div>
                 <div>
                   <div className="flex items-center gap-0.5 text-amber-400">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} className="h-3.5 w-3.5 fill-current" />
-                    ))}
+                    {Array.from({ length: 5 }).map((_, i) =>
+                    <Star key={i} className="h-3.5 w-3.5 fill-current" />
+                    )}
                   </div>
-                  <span className="text-xs text-foreground/60">Loved by 2,400+ families</span>
+                  <span className="text-xs text-foreground/60">Loved by 85+</span>
                 </div>
               </div>
             </Reveal>
@@ -88,12 +88,12 @@ export default function Hero() {
                   <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">Grade 4</span>
                 </div>
                 <div className="mt-5 space-y-3">
-                  {PLAN.map((row) => (
-                    <div key={row.s} className="flex items-center justify-between rounded-xl bg-stonebg px-4 py-3">
+                  {PLAN.map((row) =>
+                  <div key={row.s} className="flex items-center justify-between rounded-xl bg-stonebg px-4 py-3">
                       <span className="text-sm font-medium text-foreground/80">{row.s}</span>
                       <span className="text-xs font-medium text-foreground/55">{row.v}</span>
                     </div>
-                  ))}
+                  )}
                 </div>
                 <div className="mt-5 flex items-center justify-between rounded-xl bg-primary px-4 py-3 text-primary-foreground">
                   <span className="text-xs font-medium tracking-label">Weekly progress</span>
@@ -104,6 +104,6 @@ export default function Hero() {
           </Reveal>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
