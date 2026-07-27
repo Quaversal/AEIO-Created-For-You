@@ -70,7 +70,7 @@ export default function Hero() {
                     <Star key={i} className="h-3.5 w-3.5 fill-current" />
                     )}
                   </div>
-                  <span className="text-xs text-foreground/60">Loved by 85+</span>
+                  <span className="text-xs text-foreground/60">Loved by 85+ families</span>
                 </div>
               </div>
             </Reveal>
