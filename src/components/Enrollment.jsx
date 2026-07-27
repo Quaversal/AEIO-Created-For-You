@@ -56,7 +56,7 @@ export default function Enrollment() {
           </Reveal>
 
           <Reveal delay={120}>
-            <div className="rounded-3xl border border-white/25 bg-white/10 p-6 shadow-2xl shadow-black/40 ring-1 ring-black/5 backdrop-blur sm:p-8">
+            <div className="rounded-3xl border border-border bg-white p-6 text-foreground shadow-2xl shadow-black/30 sm:p-8">
               <AnimatePresence mode="wait">
                 {done ? (
                   <motion.div
@@ -69,7 +69,7 @@ export default function Enrollment() {
                       <Check className="h-7 w-7 text-iceblue" />
                     </span>
                     <h3 className="mt-4 font-heading text-2xl font-semibold">Thank you!</h3>
-                    <p className="mt-2 max-w-xs text-white/85">
+                    <p className="mt-2 max-w-xs text-foreground/70">
                       We've received your inquiry and will be in touch within one business day.
                     </p>
                     <button
@@ -77,7 +77,7 @@ export default function Enrollment() {
                         setDone(false);
                         setForm({ parent_name: "", email: "", student_grade: "Elementary", message: "" });
                       }}
-                      className="mt-6 rounded-xl border border-white/20 px-5 py-2 text-sm font-medium text-white/80 transition hover:bg-white/10"
+                      className="mt-6 rounded-xl border border-border px-5 py-2 text-sm font-medium text-foreground/70 transition hover:bg-stonebg"
                     >
                       Submit another
                     </button>
@@ -91,47 +91,47 @@ export default function Enrollment() {
                     className="space-y-4"
                   >
                     <div>
-                      <label className="text-xs font-medium tracking-label text-white/80">Parent / Guardian Name</label>
+                      <label className="text-xs font-medium tracking-label text-foreground/70">Parent / Guardian Name</label>
                       <input
                         required
                         value={form.parent_name}
                         onChange={(e) => update("parent_name", e.target.value)}
-                        className="mt-1.5 w-full rounded-xl border border-white/25 bg-white/10 px-4 py-3 text-sm text-white placeholder-white/60 outline-none focus:border-iceblue"
+                        className="mt-1.5 w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground placeholder-foreground/40 outline-none focus:border-iceblue"
                         placeholder="Jane Doe"
                       />
                     </div>
                     <div>
-                      <label className="text-xs font-medium tracking-label text-white/80">Email</label>
+                      <label className="text-xs font-medium tracking-label text-foreground/70">Email</label>
                       <input
                         required
                         type="email"
                         value={form.email}
                         onChange={(e) => update("email", e.target.value)}
-                        className="mt-1.5 w-full rounded-xl border border-white/25 bg-white/10 px-4 py-3 text-sm text-white placeholder-white/60 outline-none focus:border-iceblue"
+                        className="mt-1.5 w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground placeholder-foreground/40 outline-none focus:border-iceblue"
                         placeholder="jane@email.com"
                       />
                     </div>
                     <div>
-                      <label className="text-xs font-medium tracking-label text-white/80">Student Grade Level</label>
+                      <label className="text-xs font-medium tracking-label text-foreground/70">Student Grade Level</label>
                       <select
                         value={form.student_grade}
                         onChange={(e) => update("student_grade", e.target.value)}
-                        className="mt-1.5 w-full rounded-xl border border-white/25 bg-white/10 px-4 py-3 text-sm text-white outline-none focus:border-iceblue"
+                        className="mt-1.5 w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none focus:border-iceblue"
                       >
                         {GRADES.map((g) => (
-                          <option key={g} value={g} className="bg-slatedeep text-white">
+                          <option key={g} value={g} className="bg-white text-foreground">
                             {g}
                           </option>
                         ))}
                       </select>
                     </div>
                     <div>
-                      <label className="text-xs font-medium tracking-label text-white/80">Message (optional)</label>
+                      <label className="text-xs font-medium tracking-label text-foreground/70">Message (optional)</label>
                       <textarea
                         value={form.message}
                         onChange={(e) => update("message", e.target.value)}
                         rows={3}
-                        className="mt-1.5 w-full resize-none rounded-xl border border-white/25 bg-white/10 px-4 py-3 text-sm text-white placeholder-white/60 outline-none focus:border-iceblue"
+                        className="mt-1.5 w-full resize-none rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground placeholder-foreground/40 outline-none focus:border-iceblue"
                         placeholder="Tell us about your learner's interests and goals."
                       />
                     </div>
