@@ -1,0 +1,19 @@
+{
+  "name": "Subscriber",
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "format": "email",
+      "title": "Email"
+    },
+    "source": {
+      "type": "string",
+      "default": "lattice_footer",
+      "title": "Source"
+    }
+  },
+  "required": [
+    "email"
+  ]
+}

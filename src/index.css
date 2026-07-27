@@ -4,89 +4,138 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    --background: 40 30% 97%;
+    --foreground: 150 38% 16%;
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
+    --card-foreground: 150 38% 16%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --popover-foreground: 150 38% 16%;
+    --primary: 14 67% 51%;
+    --primary-foreground: 40 30% 97%;
+    --secondary: 150 38% 16%;
+    --secondary-foreground: 40 30% 97%;
+    --muted: 38 25% 92%;
+    --muted-foreground: 150 12% 35%;
+    --accent: 41 98% 50%;
+    --accent-foreground: 150 38% 16%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 40 30% 97%;
+    --border: 38 25% 88%;
+    --input: 38 25% 88%;
+    --ring: 14 67% 51%;
     --radius: 0.5rem;
-    --font-heading: ui-sans-serif, system-ui, sans-serif;
-    --font-body: ui-sans-serif, system-ui, sans-serif;
-    --font-display: ui-sans-serif, system-ui, sans-serif;
+    --paper: #FDFBF7;
+    --clay: #D45D31;
+    --forest: #1B4332;
+    --amber: #FFB703;
+    --font-heading: 'Fraunces', ui-serif, Georgia, serif;
+    --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Fraunces', ui-serif, Georgia, serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
-
-
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
-
   body {
-    @apply bg-background text-foreground font-body;
+    @apply text-foreground font-body;
+    background-color: #FDFBF7;
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .font-heading { font-family: var(--font-heading); }
+  .font-body { font-family: var(--font-body); }
+  .font-display { font-family: var(--font-display); }
+
+  .text-paper { color: #FDFBF7; }
+  .bg-paper { background-color: #FDFBF7; }
+  .text-clay { color: #D45D31; }
+  .bg-clay { background-color: #D45D31; }
+  .text-forest { color: #1B4332; }
+  .bg-forest { background-color: #1B4332; }
+  .text-amber { color: #FFB703; }
+  .bg-amber { background-color: #FFB703; }
+  .border-clay { border-color: #D45D31; }
+  .border-forest { border-color: #1B4332; }
+
+  .tracking-label {
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* Woven textile micro-texture */
+  .texture-weave {
+    background-image:
+      repeating-linear-gradient(45deg, rgba(212,93,49,0.025) 0px, rgba(212,93,49,0.025) 1px, transparent 1px, transparent 6px),
+      repeating-linear-gradient(-45deg, rgba(27,67,50,0.025) 0px, rgba(27,67,50,0.025) 1px, transparent 1px, transparent 6px);
+  }
+
+  /* Impact pulse ripple */
+  @keyframes impact-pulse {
+    0% { transform: scale(0.8); opacity: 0.6; }
+    100% { transform: scale(2.4); opacity: 0; }
+  }
+  .impact-pulse::before,
+  .impact-pulse::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    border: 2px solid #D45D31;
+    animation: impact-pulse 2.6s ease-out infinite;
+  }
+  .impact-pulse::after {
+    animation-delay: 1.3s;
+  }
+
+  /* Golden thread glow */
+  @keyframes thread-glow {
+    0%, 100% { opacity: 0.25; stroke-dashoffset: 0; }
+    50% { opacity: 0.6; stroke-dashoffset: -40; }
+  }
+  .thread-path {
+    animation: thread-glow 6s ease-in-out infinite;
+  }
+
+  @keyframes thread-expand {
+    0% { opacity: 0; transform: scaleX(0); }
+    100% { opacity: 1; transform: scaleX(1); }
+  }
+
+  /* Heartbeat for portraits */
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.04); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.04); }
+  }
+  .heartbeat:hover {
+    animation: heartbeat 1.4s ease-in-out;
+  }
+
+  /* Fade up on scroll */
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(32px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal {
+    opacity: 0;
+  }
+  .reveal.in-view {
+    animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 }

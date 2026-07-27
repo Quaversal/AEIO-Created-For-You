@@ -1,0 +1,40 @@
+{
+  "name": "Donation",
+  "type": "object",
+  "properties": {
+    "donor_name": {
+      "type": "string",
+      "title": "Donor Name"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "title": "Email"
+    },
+    "amount": {
+      "type": "number",
+      "title": "Amount (USD)"
+    },
+    "impact_area": {
+      "type": "string",
+      "enum": [
+        "Education",
+        "Nutrition",
+        "Protection",
+        "Community"
+      ],
+      "default": "Education",
+      "title": "Impact Area"
+    },
+    "message": {
+      "type": "string",
+      "title": "Message"
+    }
+  },
+  "required": [
+    "donor_name",
+    "email",
+    "amount",
+    "impact_area"
+  ]
+}
