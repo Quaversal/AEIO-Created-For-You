@@ -45,7 +45,10 @@ export default function SiteNav() {
       scrolled ? "border-b border-border bg-card/90 shadow-sm backdrop-blur" : "border-b border-transparent bg-transparent"}`
       }>
       
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <nav
+        className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"
+        style={{ textShadow: scrolled ? "none" : "0 1px 10px rgba(255,255,255,0.75), 0 0 3px rgba(255,255,255,0.6)" }}
+      >
         <button onClick={goHome} className="flex items-center gap-2">
           
 
@@ -57,20 +60,20 @@ export default function SiteNav() {
           <button
             key={item.href}
             onClick={() => scrollTo(item.href)}
-            className="text-sm font-medium text-foreground/70 transition hover:text-primary">
+            className="text-sm font-medium text-foreground transition hover:text-primary">
             
               {item.label}
             </button>
           )}
           <Link
             to="/about"
-            className="text-sm font-medium text-foreground/70 transition hover:text-primary">
+            className="text-sm font-medium text-foreground transition hover:text-primary">
 
             About
           </Link>
           <Link
             to="/staff-portal"
-            className="text-sm font-medium text-foreground/70 transition hover:text-primary">
+            className="text-sm font-medium text-foreground transition hover:text-primary">
 
             Staff Portal
           </Link>
