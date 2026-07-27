@@ -21,7 +21,7 @@ export default function Hero() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
             <Reveal>
-              <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium tracking-label text-primary">
+              <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium tracking-label text-primary hidden">
                 <Sparkles className="h-3.5 w-3.5" /> Personalized homeschool education
               </span>
             </Reveal>
