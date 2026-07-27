@@ -60,7 +60,17 @@ export default function StaffPortal() {
   };
 
   return (
-    <div className="min-h-screen bg-stonebg">
+    <div className="relative min-h-screen bg-stonebg">
+      <div
+        className="pointer-events-none fixed inset-0 -z-10 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://media.base44.com/images/public/6a67b5b8cea8c1982f3940ce/f4b9080d5_image.png')",
+          filter: "blur(3px)",
+          transform: "scale(1.06)",
+        }}
+      />
+      <div className="pointer-events-none fixed inset-0 -z-10 bg-stonebg/65" />
       <SiteNav />
       <main className="mx-auto max-w-6xl px-6 pt-28 pb-20">
         <header className="mb-8">
