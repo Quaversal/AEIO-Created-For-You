@@ -1,0 +1,35 @@
+{
+  "name": "Enquiry",
+  "type": "object",
+  "properties": {
+    "parent_name": {
+      "type": "string",
+      "title": "Parent Name"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "title": "Email"
+    },
+    "student_grade": {
+      "type": "string",
+      "enum": [
+        "Elementary",
+        "Middle School",
+        "High School",
+        "Other"
+      ],
+      "default": "Elementary",
+      "title": "Student Grade"
+    },
+    "message": {
+      "type": "string",
+      "title": "Message"
+    }
+  },
+  "required": [
+    "parent_name",
+    "email",
+    "student_grade"
+  ]
+}

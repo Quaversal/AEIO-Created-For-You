@@ -30,11 +30,11 @@ export default function ImpactCounter({ target, suffix = "", label, duration = 2
 
   return (
     <div ref={ref} className="text-center">
-      <div className="font-heading text-4xl font-semibold text-clay sm:text-5xl">
+      <div className="font-heading text-4xl font-semibold text-primary sm:text-5xl">
         {value.toLocaleString()}
-        <span className="text-amber">{suffix}</span>
+        <span className="text-accent">{suffix}</span>
       </div>
-      <div className="mt-2 text-xs tracking-label text-forest/60">{label}</div>
+      <div className="mt-2 text-xs tracking-label text-foreground/60">{label}</div>
     </div>
   );
 }

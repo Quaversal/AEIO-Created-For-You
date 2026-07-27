@@ -1,105 +1,109 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { Image } from "@/components/ui/image";
-import { ArrowDown } from "lucide-react";
-import ImpactCounter from "./ImpactCounter";
+import { ArrowRight, Sparkles, Star } from "lucide-react";
 import Reveal from "./Reveal";
 
-const HERO_IMG = "https://media.base44.com/images/public/6a67b5b8cea8c1982f3940ce/be6138ec2_generated_7544edf0.png";
+const scrollTo = (id) => document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
+
+const PLAN = [
+  { s: "Math — fractions", v: "Live 10:00" },
+  { s: "Reading — folk tales", v: "Async" },
+  { s: "Science — plant life", v: "Project" },
+  { s: "Art — watercolor", v: "Fri 14:00" },
+];
 
 export default function Hero() {
-  const scrollTo = (id) => document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
-
   return (
-    <section id="nexus" className="relative min-h-screen w-full overflow-hidden">
-      <div className="absolute inset-0">
-        <Image
-          src={HERO_IMG}
-          alt="A Nigerian community in motion during golden hour"
-          className="h-full w-full object-cover"
-          fittingType="fill"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-forest/40 via-forest/30 to-paper" />
-        <div className="absolute inset-0 bg-gradient-to-r from-forest/50 to-transparent" />
-      </div>
+    <section id="top" className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
+      <div className="pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full bg-accent/10 blur-3xl" />
+      <div className="pointer-events-none absolute top-44 -left-24 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
 
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 pt-24 pb-16">
-        <Reveal>
-          <span className="inline-flex items-center gap-2 rounded-full border border-paper/30 bg-paper/10 px-4 py-1.5 text-xs tracking-label text-paper backdrop-blur-sm">
-            <span className="h-1.5 w-1.5 rounded-full bg-amber" />
-            All · Every · Individual · One
-          </span>
-        </Reveal>
-
-        <Reveal delay={150}>
-          <h1 className="mt-6 max-w-4xl font-heading text-5xl font-medium leading-[1.05] text-paper sm:text-7xl lg:text-8xl">
-            We do not lift{" "}
-            <button
-              onClick={() => scrollTo("#stories")}
-              className="text-amber underline decoration-amber/40 decoration-2 underline-offset-8 transition-all hover:decoration-amber"
-            >
-              communities
-            </button>
-            .
-            <br />
-            We{" "}
-            <button
-              onClick={() => scrollTo("#mission")}
-              className="text-amber underline decoration-amber/40 decoration-2 underline-offset-8 transition-all hover:decoration-amber"
-            >
-              reveal
-            </button>{" "}
-            their strength.
-          </h1>
-        </Reveal>
-
-        <Reveal delay={300}>
-          <p className="mt-8 max-w-xl text-lg leading-relaxed text-paper/80 sm:text-xl">
-            AEIO is a human lattice — a living ecosystem of empowerment, systemic
-            transparency, and the profound beauty of collective human potential.
-          </p>
-        </Reveal>
-
-        <Reveal delay={450}>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <button
-              onClick={() => scrollTo("#contribute")}
-              className="impact-pulse group relative overflow-hidden rounded-full bg-clay px-8 py-4 text-base font-medium text-paper transition-transform hover:scale-[1.03]"
-            >
-              <span className="relative z-10">Join the Lattice</span>
-            </button>
-            <button
-              onClick={() => scrollTo("#ledger")}
-              className="rounded-full border border-paper/40 px-8 py-4 text-base text-paper transition-colors hover:bg-paper/10"
-            >
-              See the Impact
-            </button>
-          </div>
-        </Reveal>
-
-        <Reveal delay={600}>
-          <div className="mt-16 grid grid-cols-2 gap-8 border-t border-paper/15 pt-8 sm:grid-cols-3">
-            <ImpactCounter target={1284} label="Lives Touched" />
-            <ImpactCounter target={37} label="Communities Served" />
-            <div className="col-span-2 text-center sm:col-span-1">
-              <div className="font-heading text-4xl font-semibold text-clay sm:text-5xl">
-                <span className="text-amber">$</span>0
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div>
+            <Reveal>
+              <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium tracking-label text-primary">
+                <Sparkles className="h-3.5 w-3.5" /> Personalized homeschool education
+              </span>
+            </Reveal>
+            <Reveal delay={80}>
+              <h1 className="mt-5 font-heading text-4xl font-semibold leading-[1.1] text-foreground sm:text-5xl lg:text-6xl">
+                Homeschooling, <span className="text-primary">reimagined</span> for every learner.
+              </h1>
+            </Reveal>
+            <Reveal delay={160}>
+              <p className="mt-5 max-w-lg text-lg text-foreground/70">
+                AEIO blends certified educators, flexible schedules, and a curriculum tailored to your
+                child — so learning happens at their pace, in their way, with you at the center.
+              </p>
+            </Reveal>
+            <Reveal delay={240}>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <button
+                  onClick={() => scrollTo("#enroll")}
+                  className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition hover:bg-primary/90"
+                >
+                  Enroll Now <ArrowRight className="h-4 w-4" />
+                </button>
+                <button
+                  onClick={() => scrollTo("#programs")}
+                  className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition hover:border-primary/40"
+                >
+                  Explore Programs
+                </button>
               </div>
-              <div className="mt-2 text-xs tracking-label text-forest/60">Wasted on Overhead</div>
-            </div>
+            </Reveal>
+            <Reveal delay={320}>
+              <div className="mt-8 flex items-center gap-4">
+                <div className="flex -space-x-2">
+                  {["AM", "JL", "RK", "TS"].map((x) => (
+                    <span
+                      key={x}
+                      className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-card bg-primary/15 text-xs font-semibold text-primary"
+                    >
+                      {x}
+                    </span>
+                  ))}
+                </div>
+                <div>
+                  <div className="flex items-center gap-0.5 text-amber-400">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} className="h-3.5 w-3.5 fill-current" />
+                    ))}
+                  </div>
+                  <span className="text-xs text-foreground/60">Loved by 2,400+ families</span>
+                </div>
+              </div>
+            </Reveal>
           </div>
-        </Reveal>
-      </div>
 
-      <motion.button
-        onClick={() => scrollTo("#mission")}
-        className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-paper/70"
-        animate={{ y: [0, 8, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
-      >
-        <span className="text-xs tracking-label">Scroll</span>
-        <ArrowDown className="h-4 w-4" />
-      </motion.button>
+          <Reveal delay={200}>
+            <div className="relative">
+              <div className="absolute -inset-4 -rotate-2 rounded-[2rem] bg-gradient-to-br from-primary/15 to-accent/20 blur-2xl" />
+              <div className="relative rounded-3xl border border-border bg-card p-6 shadow-xl">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-xs tracking-label text-foreground/50">This week</div>
+                    <div className="font-heading text-lg font-semibold text-foreground">Maya's Learning Plan</div>
+                  </div>
+                  <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">Grade 4</span>
+                </div>
+                <div className="mt-5 space-y-3">
+                  {PLAN.map((row) => (
+                    <div key={row.s} className="flex items-center justify-between rounded-xl bg-stonebg px-4 py-3">
+                      <span className="text-sm font-medium text-foreground/80">{row.s}</span>
+                      <span className="text-xs font-medium text-foreground/55">{row.v}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-5 flex items-center justify-between rounded-xl bg-primary px-4 py-3 text-primary-foreground">
+                  <span className="text-xs font-medium tracking-label">Weekly progress</span>
+                  <span className="font-heading text-lg font-semibold">86%</span>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </div>
     </section>
   );
 }
