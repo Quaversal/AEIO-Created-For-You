@@ -5,7 +5,6 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const NAV_ITEMS = [
 { label: "Programs", href: "#programs" },
-{ label: "Approach", href: "#approach" },
 { label: "Stories", href: "#stories" },
 { label: "Enroll", href: "#enroll" }];
 
@@ -64,9 +63,15 @@ export default function SiteNav() {
             </button>
           )}
           <Link
+            to="/about"
+            className="text-sm font-medium text-foreground/70 transition hover:text-primary">
+
+            About
+          </Link>
+          <Link
             to="/staff-portal"
             className="text-sm font-medium text-foreground/70 transition hover:text-primary">
-            
+
             Staff Portal
           </Link>
           <button
@@ -99,9 +104,15 @@ export default function SiteNav() {
                 </button>
             )}
               <Link
+              to="/about"
+              className="py-2 text-left text-sm font-medium text-foreground/80">
+
+                About
+              </Link>
+              <Link
               to="/staff-portal"
               className="py-2 text-left text-sm font-medium text-foreground/80">
-              
+
                 Staff Portal
               </Link>
               <button
