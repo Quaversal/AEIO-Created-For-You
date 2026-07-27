@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { base44 } from "@/api/base44Client";
 import { format, isSameDay, addMonths, subMonths, startOfMonth } from "date-fns";
-import { Loader2, Trash2, Clock, CalendarDays } from "lucide-react";
+import { Loader2, Trash2, Clock, CalendarDays, LogOut } from "lucide-react";
 import SiteNav from "@/components/SiteNav";
 import CalendarGrid from "@/components/schedule/CalendarGrid";
 import BlockForm from "@/components/schedule/BlockForm";
@@ -55,13 +55,28 @@ export default function StaffPortal() {
     setBlocks((prev) => prev.filter((b) => b.id !== id));
   };
 
+  const handleSignOut = async () => {
+    await base44.auth.logout("/login");
+  };
+
   return (
     <div className="min-h-screen bg-stonebg">
       <SiteNav />
       <main className="mx-auto max-w-6xl px-6 pt-28 pb-20">
         <header className="mb-8">
-          <span className="text-xs font-medium tracking-label text-primary">Staff Portal</span>
-          <h1 className="mt-2 font-heading text-3xl font-semibold text-foreground sm:text-4xl">My Schedule</h1>
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <span className="text-xs font-medium tracking-label text-primary">Staff Portal</span>
+              <h1 className="mt-2 font-heading text-3xl font-semibold text-foreground sm:text-4xl">My Schedule</h1>
+            </div>
+            <button
+              onClick={handleSignOut}
+              className="inline-flex shrink-0 items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-sm font-medium text-foreground/70 transition hover:text-primary"
+            >
+              <LogOut className="h-4 w-4" />
+              Sign out
+            </button>
+          </div>
           <p className="mt-2 text-sm text-foreground/60">
             {user
               ? user.role === "admin"
