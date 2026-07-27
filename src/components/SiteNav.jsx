@@ -48,10 +48,10 @@ export default function SiteNav() {
       
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <button onClick={goHome} className="flex items-center gap-2">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-lg font-semibold text-primary-foreground [font-family:'Dancing_Script',_system-ui]">A
+          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-lg font-semibold text-primary-foreground [font-family:'Dancing_Script',_system-ui] hidden">A
 
           </span>
-          <span className="text-foreground [font-family:'Griddy_Blocks',_sans-serif] font-normal text-5xl">AEIO</span>
+          <span className="text-foreground [font-family:'Griddy_Blocks',_sans-serif] font-normal text-5xl">Aeio</span>
         </button>
         <div className="hidden items-center gap-8 md:flex">
           {NAV_ITEMS.map((item) =>
