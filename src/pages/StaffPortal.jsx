@@ -70,7 +70,7 @@ export default function StaffPortal() {
           transform: "scale(1.06)",
         }}
       />
-      <div className="pointer-events-none fixed inset-0 -z-10 bg-stonebg/65" />
+      <div className="pointer-events-none fixed inset-0 -z-10 bg-gradient-to-br from-iceblue/85 via-mist/90 to-iceblue/85" />
       <SiteNav />
       <main className="mx-auto max-w-6xl px-6 pt-28 pb-20">
         <header className="mb-8">
