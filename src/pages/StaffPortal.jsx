@@ -8,14 +8,23 @@ import BlockForm from "@/components/schedule/BlockForm";
 
 export default function StaffPortal() {
   const [user, setUser] = useState(null);
+  const [userMap, setUserMap] = useState({});
   const [blocks, setBlocks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [month, setMonth] = useState(startOfMonth(new Date()));
   const [selectedDate, setSelectedDate] = useState(new Date());
 
-  const load = async (uid) => {
-    const res = await base44.entities.ScheduleBlock.filter({ created_by_id: uid }, "start_date");
+  const load = async (me) => {
+    const isAdmin = me.role === "admin";
+    const res = await base44.entities.ScheduleBlock.filter(
+      isAdmin ? {} : { created_by_id: me.id },
+      "start_date"
+    );
     setBlocks(res);
+    if (isAdmin) {
+      const users = await base44.entities.User.list();
+      setUserMap(Object.fromEntries(users.map((u) => [u.id, u.full_name || u.email])));
+    }
   };
 
   useEffect(() => {
@@ -23,7 +32,7 @@ export default function StaffPortal() {
       try {
         const me = await base44.auth.me();
         setUser(me);
-        await load(me.id);
+        await load(me);
       } catch (e) {
         // ignore — ProtectedRoute gates access
       } finally {
@@ -38,7 +47,7 @@ export default function StaffPortal() {
   );
 
   const handleAdded = async () => {
-    if (user) await load(user.id);
+    if (user) await load(user);
   };
 
   const handleDelete = async (id) => {
@@ -55,7 +64,9 @@ export default function StaffPortal() {
           <h1 className="mt-2 font-heading text-3xl font-semibold text-foreground sm:text-4xl">My Schedule</h1>
           <p className="mt-2 text-sm text-foreground/60">
             {user
-              ? `Welcome back, ${user.full_name || user.email}. Mark the time blocks when you're busy.`
+              ? user.role === "admin"
+                ? "Admin view — you can see every staff member's busy blocks."
+                : `Welcome back, ${user.full_name || user.email}. Mark the time blocks when you're busy.`
               : "Mark the time blocks when you're busy."}
           </p>
         </header>
@@ -103,6 +114,11 @@ export default function StaffPortal() {
                           <Clock className="h-3 w-3" />
                           {format(new Date(b.start_date), "h:mm a")} – {format(new Date(b.end_date), "h:mm a")}
                         </p>
+                        {user?.role === "admin" && (
+                          <p className="truncate text-[11px] text-foreground/40">
+                            {userMap[b.created_by_id] || "Staff"}
+                          </p>
+                        )}
                       </div>
                       <button
                         onClick={() => handleDelete(b.id)}

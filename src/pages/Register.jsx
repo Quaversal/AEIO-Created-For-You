@@ -23,6 +23,10 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+    if (!email.toLowerCase().endsWith("@aeiocreatedforyou.org")) {
+      setError("Account creation is restricted to @aeiocreatedforyou.org email addresses.");
+      return;
+    }
     if (password !== confirmPassword) {
       setError("Passwords do not match");
       return;
@@ -176,13 +180,14 @@ export default function Register() {
               type="email"
               autoComplete="email"
               autoFocus
-              placeholder="you@example.com"
+              placeholder="you@aeiocreatedforyou.org"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="pl-10 h-12"
               required
             />
           </div>
+          <p className="text-xs text-muted-foreground">Only @aeiocreatedforyou.org emails may create an account.</p>
         </div>
         <div className="space-y-2">
           <Label htmlFor="password">Password</Label>
