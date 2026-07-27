@@ -36,7 +36,7 @@ export default function SiteNav() {
           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-lg font-semibold text-primary-foreground [font-family:'Dancing_Script',_system-ui]">A
 
           </span>
-          <span className="font-heading text-xl font-semibold text-foreground">AEIO</span>
+          <span className="text-xl font-semibold text-foreground [font-family:'DM_Serif_Display',_serif]">AEIO</span>
         </button>
         <div className="hidden items-center gap-8 md:flex">
           {NAV_ITEMS.map((item) =>
