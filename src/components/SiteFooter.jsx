@@ -14,8 +14,8 @@ export default function SiteFooter() {
               <span className="font-heading text-xl font-semibold text-foreground">AEIO</span>
             </div>
             <p className="mt-3 max-w-xs text-sm text-foreground/60">Digital First Organization
-
             </p>
+            <p className="mt-3 text-sm font-medium text-primary">Serving the Greater New York Area</p>
           </div>
 
           <div>
