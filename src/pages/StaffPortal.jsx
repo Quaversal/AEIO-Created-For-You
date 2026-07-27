@@ -23,6 +23,7 @@ export default function StaffPortal() {
   const [fileLoading, setFileLoading] = useState(false);
 
   useEffect(() => {
+    let cancelled = false;
     (async () => {
       try {
         const res = await fetch(TREE_URL, { headers: { Accept: "application/vnd.github+json" } });
@@ -31,13 +32,16 @@ export default function StaffPortal() {
         const blobs = (data.tree || [])
           .filter((n) => n.type === "blob")
           .map((n) => ({ path: n.path, size: n.size }));
-        setFiles(blobs);
+        if (!cancelled) setFiles(blobs);
       } catch (e) {
-        setError(e.message || "Failed to load repository.");
+        if (!cancelled) setError(e.message || "Failed to load repository.");
       } finally {
-        setLoading(false);
+        if (!cancelled) setLoading(false);
       }
     })();
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   const openFile = async (path) => {
