@@ -1,4 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Titan+One:wght@400&family=Noto+Serif:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=EB+Garamond:wght@400;500;600;700&family=DM+Serif+Display:wght@400&display=swap');
+/* base44-workspace-fonts:start */
+@font-face {
+  font-family: 'Griddy Blocks';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('./assets/fonts/griddy-blocks-1eacc012-400-normal.woff2') format('woff2');
+}
+/* base44-workspace-fonts:end */
 
 @tailwind base;
 @tailwind components;
