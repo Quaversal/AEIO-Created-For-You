@@ -9,9 +9,9 @@ import SiteFooter from "@/components/SiteFooter";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-stonebg">
+    <div className="relative min-h-screen bg-[#BFE4EE]">
       <div
-        className="pointer-events-none fixed inset-0 -z-10 bg-cover bg-center"
+        className="pointer-events-none absolute top-0 inset-x-0 h-[760px] bg-cover bg-center"
         style={{
           backgroundImage:
             "url('https://media.base44.com/images/public/6a67b5b8cea8c1982f3940ce/f4b9080d5_image.png')",
@@ -19,9 +19,9 @@ export default function Home() {
           transform: "scale(1.06)",
         }}
       />
-      <div className="pointer-events-none fixed inset-0 -z-10 bg-gradient-to-br from-slatedeep/85 via-coldstone/80 to-slatedeep/85" />
+      <div className="pointer-events-none absolute top-0 inset-x-0 h-[760px] bg-gradient-to-b from-iceblue/35 via-iceblue/20 to-[#BFE4EE]" />
       <SiteNav />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <Programs />
         <Approach />
