@@ -56,7 +56,7 @@ export default function Enrollment() {
           </Reveal>
 
           <Reveal delay={120}>
-            <div className="rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur sm:p-8">
+            <div className="rounded-3xl border border-white/25 bg-white/10 p-6 shadow-2xl shadow-black/40 ring-1 ring-black/5 backdrop-blur sm:p-8">
               <AnimatePresence mode="wait">
                 {done ? (
                   <motion.div
