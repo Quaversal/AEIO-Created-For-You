@@ -13,8 +13,8 @@ export default function SiteFooter() {
               </span>
               <span className="font-heading text-xl font-semibold text-foreground">AEIO</span>
             </div>
-            <p className="mt-3 max-w-xs text-sm text-foreground/60">
-              Personalized homeschool education that meets every learner where they are.
+            <p className="mt-3 max-w-xs text-sm text-foreground/60">Digital First Organization
+
             </p>
           </div>
 
@@ -55,6 +55,6 @@ export default function SiteFooter() {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>);
+
 }
