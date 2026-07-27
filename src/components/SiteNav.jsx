@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const NAV_ITEMS = [
   { label: "Programs", href: "#programs" },
@@ -47,6 +48,12 @@ export default function SiteNav() {
               {item.label}
             </button>
           ))}
+          <Link
+            to="/staff-portal"
+            className="text-sm font-medium text-foreground/70 transition hover:text-primary"
+          >
+            Staff Portal
+          </Link>
           <button
             onClick={() => scrollTo("#enroll")}
             className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90"
@@ -76,6 +83,12 @@ export default function SiteNav() {
                   {item.label}
                 </button>
               ))}
+              <Link
+                to="/staff-portal"
+                className="py-2 text-left text-sm font-medium text-foreground/80"
+              >
+                Staff Portal
+              </Link>
               <button
                 onClick={() => scrollTo("#enroll")}
                 className="mt-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground"
