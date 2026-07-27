@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const NAV_ITEMS = [
 { label: "Programs", href: "#programs" },
@@ -13,6 +13,8 @@ const NAV_ITEMS = [
 export default function SiteNav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -22,7 +24,20 @@ export default function SiteNav() {
 
   const scrollTo = (href) => {
     setOpen(false);
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    if (location.pathname === "/") {
+      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate(`/${href}`);
+    }
+  };
+
+  const goHome = () => {
+    setOpen(false);
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+    }
   };
 
   return (
@@ -32,7 +47,7 @@ export default function SiteNav() {
       }>
       
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <button onClick={() => scrollTo("#top")} className="flex items-center gap-2">
+        <button onClick={goHome} className="flex items-center gap-2">
           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-lg font-semibold text-primary-foreground [font-family:'Dancing_Script',_system-ui]">A
 
           </span>
