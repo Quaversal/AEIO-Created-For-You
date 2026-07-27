@@ -71,8 +71,8 @@ export default function SiteNav() {
           </Link>
           <button
             onClick={() => scrollTo("#enroll")}
-            className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90">
-            
+            className="rounded-lg bg-slatedeep px-4 py-2 text-sm font-semibold text-primary-foreground shadow-md ring-1 ring-white/30 transition hover:bg-slatedeep/90">
+
             Enroll Now
           </button>
         </div>
@@ -106,8 +106,8 @@ export default function SiteNav() {
               </Link>
               <button
               onClick={() => scrollTo("#enroll")}
-              className="mt-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground">
-              
+              className="mt-2 rounded-lg bg-slatedeep px-4 py-2 text-sm font-semibold text-primary-foreground shadow-md ring-1 ring-white/30">
+
                 Enroll Now
               </button>
             </div>
