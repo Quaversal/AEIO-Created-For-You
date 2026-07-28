@@ -8,9 +8,9 @@ export default function SiteFooter() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="flex items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary font-heading text-lg font-semibold text-primary-foreground hidden">
-                A
-              </span>
+              
+
+              
               <span className="text-foreground [font-family:'Griddy_Blocks',_sans-serif] font-normal text-5xl">Aeio</span>
             </div>
             <p className="mt-3 max-w-xs text-sm text-foreground/60">Digital First Organization
