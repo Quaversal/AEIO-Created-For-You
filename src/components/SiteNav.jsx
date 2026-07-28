@@ -10,16 +10,9 @@ const NAV_ITEMS = [
 
 
 export default function SiteNav() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   const scrollTo = (href) => {
     setOpen(false);
@@ -40,19 +33,9 @@ export default function SiteNav() {
   };
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-      scrolled ? "border-b border-border bg-card/90 shadow-sm backdrop-blur" : "border-b border-transparent bg-transparent"}`
-      }>
-      
-      <nav
-        className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"
-        style={{ textShadow: scrolled ? "none" : "0 1px 10px rgba(255,255,255,0.75), 0 0 3px rgba(255,255,255,0.6)" }}
-      >
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-card shadow-sm">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <button onClick={goHome} className="flex items-center gap-2">
-          
-
-          
           <span className="text-foreground [font-family:'Griddy_Blocks',_sans-serif] font-normal text-5xl">Aeio</span>
         </button>
         <div className="hidden items-center gap-8 md:flex">
