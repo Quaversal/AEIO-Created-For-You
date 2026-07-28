@@ -13,14 +13,14 @@ export default function About() {
           <h1 className="mt-3 font-heading text-4xl font-semibold text-foreground sm:text-5xl">
             Personalized homeschooling, built around your child.
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-foreground/70">
-            AEIO blends certified educators, flexible schedules, and a curriculum tailored to each
-            learner — so education happens at their pace, in their way, with family at the center.
+          <p className="mt-4 max-w-2xl text-lg text-foreground/70">Excited to meet you! AEIO is in the business of educational services, helping you find the pathway to success. From goal orientation to setting a long term plan to reach your peak performance. Our goal is to help you feel comfortable to perform in the field you are working in.
+
+
           </p>
         </section>
         <Approach />
       </main>
       <SiteFooter />
-    </div>
-  );
+    </div>);
+
 }
