@@ -27,7 +27,7 @@ export default function Hero() {
             </Reveal>
             <Reveal delay={80}>
               <h1 className="mt-5 font-heading text-4xl font-semibold leading-[1.1] text-foreground sm:text-5xl lg:text-6xl">
-                Homeschooling, <span className="text-primary">excellence</span> for every learner.
+                Homeschooling <span className="text-primary">excellence</span> for every learner.
               </h1>
             </Reveal>
             <Reveal delay={160}>
