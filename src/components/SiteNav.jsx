@@ -53,12 +53,12 @@ export default function SiteNav() {
 
             About
           </Link>
-          <Link
-            to="/staff-portal"
+          <a
+            href="https://staff-portal.aeiocreatedforyou.org"
             className="text-sm font-medium text-foreground transition hover:text-primary">
 
             Staff Portal
-          </Link>
+          </a>
           <button
             onClick={() => scrollTo("#enroll")}
             className="rounded-lg bg-slatedeep px-4 py-2 text-sm font-semibold text-primary-foreground shadow-md ring-1 ring-white/30 transition hover:bg-slatedeep/90">
@@ -94,12 +94,12 @@ export default function SiteNav() {
 
                 About
               </Link>
-              <Link
-              to="/staff-portal"
+              <a
+              href="https://staff-portal.aeiocreatedforyou.org"
               className="py-2 text-left text-sm font-medium text-foreground/80">
 
                 Staff Portal
-              </Link>
+              </a>
               <button
               onClick={() => scrollTo("#enroll")}
               className="mt-2 rounded-lg bg-slatedeep px-4 py-2 text-sm font-semibold text-primary-foreground shadow-md ring-1 ring-white/30">
