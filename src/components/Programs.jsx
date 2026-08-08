@@ -56,7 +56,7 @@ export default function Programs() {
         <Reveal>
           <div className="max-w-2xl">
             <span className="text-xs font-medium tracking-label text-primary">Programs</span>
-            <h2 className="mt-3 font-heading text-3xl font-semibold text-foreground sm:text-4xl">S
+            <h2 className="mt-3 font-heading text-3xl font-semibold text-foreground sm:text-4xl">Not a 
 
             </h2>
             <p className="mt-4 text-foreground/70">
