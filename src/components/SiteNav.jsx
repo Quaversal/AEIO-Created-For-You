@@ -4,8 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const NAV_ITEMS = [
-{ label: "Programs", href: "#programs" },
-{ label: "Reviews", href: "#reviews" }];
+{ label: "Programs", href: "#programs" }];
 
 
 export default function SiteNav() {
