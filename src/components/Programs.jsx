@@ -125,7 +125,7 @@ export default function Programs() {
                 )}
               </ul>
               <button
-                onClick={() => navigate("/enroll")}
+                onClick={() => navigate("/programs")}
                 className="mt-8 inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90">
                 
                 Enroll in {current.label} <ArrowRight className="h-4 w-4" />
@@ -137,7 +137,7 @@ export default function Programs() {
         <Reveal delay={200}>
           <div className="mt-10 text-center">
             <button
-              onClick={() => navigate("/enroll")}
+              onClick={() => navigate("/programs")}
               className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-all hover:gap-3">
               
               Not sure which fits? Let's find out <ArrowRight className="h-4 w-4" />

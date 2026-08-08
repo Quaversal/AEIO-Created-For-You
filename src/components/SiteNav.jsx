@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const NAV_ITEMS = [
-{ label: "Programs", href: "#programs" }];
+{ label: "Programs", to: "/programs" }];
 
 
 export default function SiteNav() {
@@ -39,8 +39,8 @@ export default function SiteNav() {
         <div className="hidden items-center gap-8 md:flex">
           {NAV_ITEMS.map((item) =>
           <button
-            key={item.href}
-            onClick={() => scrollTo(item.href)}
+            key={item.to}
+            onClick={() => { setOpen(false); navigate(item.to); }}
             className="text-sm font-medium text-foreground transition hover:text-primary">
             
               {item.label}
@@ -80,8 +80,8 @@ export default function SiteNav() {
             <div className="flex flex-col gap-1 px-6 py-4">
               {NAV_ITEMS.map((item) =>
             <button
-              key={item.href}
-              onClick={() => scrollTo(item.href)}
+              key={item.to}
+              onClick={() => { setOpen(false); navigate(item.to); }}
               className="py-2 text-left text-sm font-medium text-foreground/80">
               
                   {item.label}
