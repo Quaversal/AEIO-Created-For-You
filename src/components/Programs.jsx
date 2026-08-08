@@ -60,8 +60,8 @@ export default function Programs() {
 
             </h2>
             <p className="mt-4 text-foreground/70">
-              Choose the format that fits your family — from one-on-one teaching to full cohorts to
-              fully independent study.
+
+
             </p>
           </div>
         </Reveal>
