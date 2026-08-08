@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { User, GraduationCap, Compass, Check, ArrowRight } from "lucide-react";
 import Reveal from "./Reveal";
 
@@ -48,6 +49,7 @@ const scrollTo = (id) => document.querySelector(id)?.scrollIntoView({ behavior: 
 
 export default function Programs() {
   const [active, setActive] = useState("private");
+  const navigate = useNavigate();
   const current = TABS.find((t) => t.key === active);
 
   return (
@@ -123,7 +125,7 @@ export default function Programs() {
                 )}
               </ul>
               <button
-                onClick={() => scrollTo("#enroll")}
+                onClick={() => navigate("/enroll")}
                 className="mt-8 inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90">
                 
                 Enroll in {current.label} <ArrowRight className="h-4 w-4" />
@@ -135,7 +137,7 @@ export default function Programs() {
         <Reveal delay={200}>
           <div className="mt-10 text-center">
             <button
-              onClick={() => scrollTo("#enroll")}
+              onClick={() => navigate("/enroll")}
               className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-all hover:gap-3">
               
               Not sure which fits? Let's find out <ArrowRight className="h-4 w-4" />

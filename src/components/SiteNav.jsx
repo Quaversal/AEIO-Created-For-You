@@ -59,7 +59,7 @@ export default function SiteNav() {
             Staff Portal
           </a>
           <button
-            onClick={() => scrollTo("#enroll")}
+            onClick={() => navigate("/enroll")}
             className="rounded-lg bg-slatedeep px-4 py-2 text-sm font-semibold text-primary-foreground shadow-md ring-1 ring-white/30 transition hover:bg-slatedeep/90">
 
             Enroll Now
@@ -100,7 +100,7 @@ export default function SiteNav() {
                 Staff Portal
               </a>
               <button
-              onClick={() => scrollTo("#enroll")}
+              onClick={() => navigate("/enroll")}
               className="mt-2 rounded-lg bg-slatedeep px-4 py-2 text-sm font-semibold text-primary-foreground shadow-md ring-1 ring-white/30">
 
                 Enroll Now

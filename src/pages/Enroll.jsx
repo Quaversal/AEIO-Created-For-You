@@ -1,11 +1,9 @@
 import React from "react";
 import SiteNav from "@/components/SiteNav";
-import Hero from "@/components/Hero";
-import Programs from "@/components/Programs";
-import Reviews from "@/components/Reviews";
+import Enrollment from "@/components/Enrollment";
 import SiteFooter from "@/components/SiteFooter";
 
-export default function Home() {
+export default function Enroll() {
   return (
     <div className="relative min-h-screen bg-[#BFE4EE]">
       <div
@@ -19,10 +17,8 @@ export default function Home() {
       />
       <div className="pointer-events-none absolute top-0 inset-x-0 h-[850px] bg-gradient-to-b from-iceblue/15 via-iceblue/10 to-[#BFE4EE]" />
       <SiteNav />
-      <main className="relative z-10">
-        <Hero />
-        <Programs />
-        <Reviews />
+      <main className="relative z-10 pt-20">
+        <Enrollment />
       </main>
       <SiteFooter />
     </div>

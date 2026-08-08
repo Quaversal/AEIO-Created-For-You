@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { ArrowRight, Sparkles, Star } from "lucide-react";
 import Reveal from "./Reveal";
 
@@ -12,6 +13,7 @@ const PLAN = [
 
 
 export default function Hero() {
+  const navigate = useNavigate();
   return (
     <section id="top" className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
       <div className="pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full bg-accent/10 blur-3xl" />
@@ -39,7 +41,7 @@ export default function Hero() {
             <Reveal delay={240}>
               <div className="mt-8 flex flex-wrap gap-4">
                 <button
-                  onClick={() => scrollTo("#enroll")}
+                  onClick={() => navigate("/enroll")}
                   className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition hover:bg-primary/90">
                   
                   Enroll Now <ArrowRight className="h-4 w-4" />
