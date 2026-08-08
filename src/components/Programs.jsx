@@ -59,7 +59,7 @@ export default function Programs() {
             <h2 className="mt-3 font-heading text-3xl font-semibold text-foreground sm:text-4xl">Not a person we can't teach
 
             </h2>
-            <p className="mt-4 text-foreground/70">
+            <p className="mt-4 text-foreground/70">With our team of PhD professors all the way to 
 
 
             </p>
