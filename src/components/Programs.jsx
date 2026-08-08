@@ -20,7 +20,7 @@ const TABS = [
   key: "full",
   label: "Full Courses",
   icon: GraduationCap,
-  tagline: "Cohort-based, accredited curriculum",
+  tagline: "FIXED SCHEDULE, ACCREDITED CURRICULUM",
   desc: "Join a structured course with live classes, assignments, and transcripts — a complete academic experience with peer connection.",
   features: [
   "Live cohort classes with classmates",
