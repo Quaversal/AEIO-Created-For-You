@@ -13,7 +13,7 @@ export default function About() {
           <h1 className="mt-3 font-semibold text-foreground [font-family:'DM_Sans',_sans-serif] text-6xl sm:text-6xl">Excited to meet you! 
 
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-foreground/70">AEIO is in the business of educational services, helping you find the pathway to success. From goal orientation to setting a long term plan to reach your peak performance. Our goal is to help you feel comfortable to perform in the field you are working in.
+          <p className="mt-4 max-w-2xl text-lg text-foreground/70">AEIO is in the business of educational services, helping you find the pathway to success. From goal orientation to setting a long term plan to reach your peak performance, our goal is to help you feel comfortable performing in the field you are working in.
 
 
           </p>
