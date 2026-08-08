@@ -5,7 +5,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const NAV_ITEMS = [
 { label: "Programs", href: "#programs" },
-{ label: "Stories", href: "#stories" }];
+{ label: "Reviews", href: "#reviews" }];
 
 
 export default function SiteNav() {
