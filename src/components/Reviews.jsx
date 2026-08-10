@@ -4,22 +4,28 @@ import Reveal from "./Reveal";
 
 const REVIEWS = [
 {
-  quote: "My daughter went from dreading math to asking for extra problems. Her teacher actually sees her.",
-  name: "Maria L.",
-  role: "Parent, Grade 6",
-  initials: "ML"
+  quote:
+    "My daughter loves her harp classes. She looks forward to the class each week. We are grateful for such an amazing opportunity to learn this wonderful instrument in our home.",
+  name: "Beth D.",
+  date: "Jul 30",
+  course: "Harp Performance & Technique 102",
+  initials: "BD"
 },
 {
-  quote: "The flexibility lets us travel as a family without falling behind. It's the best of both worlds.",
-  name: "David & Sun Park",
-  role: "Parents, Grades 4 & 9",
-  initials: "DP"
+  quote:
+    "I appreciate that the instructor really tailor's the lesson to what you want. She also has gone out of her way to make schedule adjustments and send follow-up notes regarding what they worked on. Very personable.",
+  name: "Jenny",
+  date: "Apr 3",
+  course: "Trombone Novice - Entry Level Ages 11-13",
+  initials: "JN"
 },
 {
-  quote: "We got real transcripts and college counseling. My son is headed to his top-choice school.",
-  name: "Tasha R.",
-  role: "Parent, Grade 12",
-  initials: "TR"
+  quote:
+    "The class was a great introduction for our son that is musically inclined. The teacher was detail oriented and allowed the students to interact. The class was structured, engaged and informative. We'd highly recommend the class to others.",
+  name: "Kenneth - Sharee P.",
+  date: "Feb 26",
+  course: "Middle School Drum Pad Level 101",
+  initials: "KP"
 }];
 
 
@@ -65,7 +71,8 @@ export default function Reviews() {
                   </span>
                   <div>
                     <div className="text-sm font-semibold text-foreground">{t.name}</div>
-                    <div className="text-xs text-foreground/55">{t.role}</div>
+                    <div className="text-xs text-foreground/55">{t.course}</div>
+                    <div className="text-xs text-foreground/40">{t.date}</div>
                   </div>
                 </figcaption>
               </figure>
