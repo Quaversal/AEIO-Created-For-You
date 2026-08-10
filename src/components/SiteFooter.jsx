@@ -39,7 +39,7 @@ export default function SiteFooter() {
           <div>
             <h4 className="text-xs font-semibold tracking-label text-foreground/50">Contact</h4>
             <ul className="mt-3 space-y-2 text-sm text-foreground/70">
-              <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-primary" /> hello@aeio.edu</li>
+              <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-primary" /> founderlaura@aeiocreatedforyou.org</li>
               <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-primary" /> (646) 612-1375</li>
               <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-primary" /> Online & nationwide</li>
             </ul>
