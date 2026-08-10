@@ -35,17 +35,17 @@ function Stars() {
 
 export default function Reviews() {
   return (
-    <section id="reviews" className="py-24 sm:py-32">
+    <section id="reviews" className="bg-slatedeep py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
           <div className="max-w-2xl">
-            <span className="text-xs font-medium tracking-label text-primary">5 Star Reviews</span>
-            <h2 className="mt-3 font-heading text-3xl font-semibold text-foreground sm:text-4xl">
+            <span className="text-xs font-medium tracking-label text-iceblue">5 Star Reviews</span>
+            <h2 className="mt-3 font-heading text-3xl font-semibold text-white sm:text-4xl">
               Loved by families
             </h2>
             <div className="mt-4 flex items-center gap-3">
               <Stars />
-              <p className="text-foreground/70">Rated 5.0 by 85+ families</p>
+              <p className="text-white/70">Rated 5.0 by 85+ families</p>
             </div>
           </div>
         </Reveal>
