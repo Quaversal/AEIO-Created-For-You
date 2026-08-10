@@ -40,7 +40,7 @@ export default function Reviews() {
         <Reveal>
           <div className="max-w-2xl">
             <span className="text-xs font-medium tracking-label text-iceblue">5 Star Reviews</span>
-            <h2 className="mt-3 font-heading text-3xl font-semibold text-white sm:text-4xl">Hear from our
+            <h2 className="mt-3 font-heading text-3xl font-semibold text-white sm:text-4xl">Hear from our family
 
             </h2>
             <div className="mt-4 flex items-center gap-3">
