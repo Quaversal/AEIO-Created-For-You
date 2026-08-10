@@ -21,10 +21,9 @@ export default function SiteFooter() {
           <div>
             <h4 className="text-xs font-semibold tracking-label text-foreground/50">Programs</h4>
             <ul className="mt-3 space-y-2 text-sm text-foreground/70">
-              <li><a href="#programs" className="transition hover:text-primary">Elementary</a></li>
-              <li><a href="#programs" className="transition hover:text-primary">Middle School</a></li>
-              <li><a href="#programs" className="transition hover:text-primary">High School</a></li>
-              <li><a href="#programs" className="transition hover:text-primary">Enrichment</a></li>
+              <li><a href="#programs" className="transition hover:text-primary">Private Lessons</a></li>
+              <li><a href="#programs" className="transition hover:text-primary">Full Courses</a></li>
+              <li><a href="#programs" className="transition hover:text-primary">Self-Paced Programs</a></li>
             </ul>
           </div>
 
