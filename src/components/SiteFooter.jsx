@@ -47,7 +47,7 @@ export default function SiteFooter() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 sm:flex-row">
-          <p className="text-xs text-foreground/50">© {new Date().getFullYear()} AEIO Homeschool. All rights reserved.</p>
+          <p className="text-xs text-foreground/50">© {new Date().getFullYear()} AEIO Created For You. All rights reserved.</p>
           <div className="flex gap-5 text-xs text-foreground/50">
             <a href="#" className="transition hover:text-primary">Privacy</a>
             <a href="#" className="transition hover:text-primary">Terms</a>
