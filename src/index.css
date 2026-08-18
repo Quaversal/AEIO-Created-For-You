@@ -88,4 +88,12 @@
 
   .no-scrollbar::-webkit-scrollbar { display: none; }
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  @keyframes swoosh-in {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+  .underline-swoosh {
+    animation: swoosh-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
 }

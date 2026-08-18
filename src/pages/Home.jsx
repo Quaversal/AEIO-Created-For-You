@@ -13,6 +13,7 @@ export default function Home() {
   const [typed, setTyped] = useState("");
   const [showCursor, setShowCursor] = useState(true);
   const [showArrow, setShowArrow] = useState(false);
+  const [typingDone, setTypingDone] = useState(false);
 
   useEffect(() => {
     const t = setTimeout(() => setRevealed(true), 1000);
@@ -28,6 +29,7 @@ export default function Home() {
       setTyped(FULL_TEXT.slice(0, i));
       if (i >= FULL_TEXT.length) {
         clearInterval(id);
+        setTypingDone(true);
         setTimeout(() => setShowCursor(false), 1000);
         setTimeout(() => setShowArrow(true), 3000);
       }
@@ -57,7 +59,18 @@ export default function Home() {
 
       <section className="relative flex h-[760px] items-center justify-center px-6 text-center lg:h-[920px]">
         <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight text-white drop-shadow-[0_2px_16px_rgba(0,0,0,0.5)] sm:text-6xl lg:text-7xl">
-          {typed}
+          {typingDone ? (
+            <>
+              What would you like to{" "}
+              <span className="relative inline-block">
+                build
+                <span className="absolute -bottom-1 left-0 h-[3px] w-full origin-left bg-gold underline-swoosh sm:-bottom-2" />
+              </span>
+              ?
+            </>
+          ) : (
+            typed
+          )}
           {revealed && showCursor && <span className="ml-1 inline-block animate-pulse text-gold">|</span>}
         </h1>
 
