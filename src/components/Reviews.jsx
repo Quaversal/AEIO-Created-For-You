@@ -45,7 +45,7 @@ export default function Reviews() {
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
           <div className="max-w-2xl">
-            <span className="text-xs font-medium tracking-label text-iceblue">testimonials</span>
+            <span className="text-xs font-medium tracking-label text-gold">testimonials</span>
             <h2 className="mt-3 font-heading text-3xl font-semibold text-white sm:text-4xl">Hear from our family
 
             </h2>
@@ -61,12 +61,12 @@ export default function Reviews() {
           <Reveal key={t.name} delay={i * 80}>
               <figure className="flex h-full flex-col rounded-2xl border border-border bg-card p-6">
                 <div className="flex items-center justify-between">
-                  <Quote className="h-8 w-8 text-primary/30" />
+                  <Quote className="h-8 w-8 text-gold/30" />
                   <Stars />
                 </div>
                 <blockquote className="mt-4 flex-1 text-foreground/80">"{t.quote}"</blockquote>
                 <figcaption className="mt-6 flex items-center gap-3">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-primary/15 font-heading text-sm font-semibold text-primary">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-gold/15 font-heading text-sm font-semibold text-gold">
                     {t.initials}
                   </span>
                   <div>

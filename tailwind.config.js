@@ -63,8 +63,9 @@ module.exports = {
   			stonebg: '#f7f5f2',
   			mist: '#efeae2',
   			slatedeep: '#1a1a1a',
-  			coldstone: '#b98e2e',
-  			iceblue: '#b98e2e'
+  			coldstone: '#1e3a8a',
+  			iceblue: '#1e3a8a',
+  			gold: '#b98e2e'
   		},
   		fontFamily: {
   			heading: ['var(--font-heading)'],
