@@ -26,7 +26,7 @@ export default function Home() {
         style={{ filter: "blur(2px)", transform: "scale(1.04)" }}
       >
         <source
-          src={"https://media.base44.com/videos/public/6a67b5b8cea8c1982f3940ce/bc7107c20_DJI_20260602085828_0009_D_2.mp4"}
+          src={"https://media.base44.com/videos/public/6a67b5b8cea8c1982f3940ce/9a0f4bc50_DJI_20260602085828_0009_D_3.mp4"}
           type="video/mp4"
         />
       </video>
