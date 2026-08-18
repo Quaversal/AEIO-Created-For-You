@@ -17,7 +17,7 @@ export default function Home() {
         style={{ filter: "blur(2px)", transform: "scale(1.04)" }}
       >
         <source
-          src={"https://drive.usercontent.google.com/download?id=1qTCahO3QWYCFvSy5DUb-dhbBjjr36t9D&export=download&confirm=t&uuid=b3b697aa-afc4-474f-a4be-c499dbb2de59"}
+          src={"https://media.base44.com/videos/public/6a67b5b8cea8c1982f3940ce/39169a6df_DJI_20260602085828_0009_D_1.mp4"}
           type="video/mp4"
         />
       </video>
