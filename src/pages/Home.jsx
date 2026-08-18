@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { ChevronDown } from "lucide-react";
 import SiteNav from "@/components/SiteNav";
 import Programs from "@/components/Programs";
 import Reviews from "@/components/Reviews";
@@ -11,6 +12,7 @@ export default function Home() {
   const [videoIn, setVideoIn] = useState(false);
   const [typed, setTyped] = useState("");
   const [showCursor, setShowCursor] = useState(true);
+  const [showArrow, setShowArrow] = useState(false);
 
   useEffect(() => {
     const t = setTimeout(() => setRevealed(true), 1000);
@@ -27,6 +29,7 @@ export default function Home() {
       if (i >= FULL_TEXT.length) {
         clearInterval(id);
         setTimeout(() => setShowCursor(false), 1000);
+        setTimeout(() => setShowArrow(true), 3000);
       }
     }, 65);
     return () => clearInterval(id);
@@ -57,6 +60,16 @@ export default function Home() {
           {typed}
           {revealed && showCursor && <span className="ml-1 inline-block animate-pulse text-gold">|</span>}
         </h1>
+
+        {showArrow && (
+          <button
+            onClick={() => document.querySelector("#programs")?.scrollIntoView({ behavior: "smooth" })}
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gold animate-bounce transition hover:text-amber-300"
+            aria-label="Scroll to content"
+          >
+            <ChevronDown className="h-10 w-10" strokeWidth={2.5} />
+          </button>
+        )}
       </section>
 
       <div
