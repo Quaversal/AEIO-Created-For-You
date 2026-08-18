@@ -7,10 +7,12 @@ import SiteFooter from "@/components/SiteFooter";
 
 export default function Home() {
   const [revealed, setRevealed] = useState(false);
+  const [videoIn, setVideoIn] = useState(false);
 
   useEffect(() => {
     const t = setTimeout(() => setRevealed(true), 3000);
-    return () => clearTimeout(t);
+    const v = setTimeout(() => setVideoIn(true), 100);
+    return () => { clearTimeout(t); clearTimeout(v); };
   }, []);
 
   return (
@@ -29,6 +31,9 @@ export default function Home() {
         />
       </video>
       <div className="pointer-events-none absolute top-0 inset-x-0 h-[850px] bg-gradient-to-b from-iceblue/15 via-iceblue/10 to-[#f7f5f2]" />
+      <div
+        className={`pointer-events-none absolute top-0 inset-x-0 h-[760px] bg-[#f7f5f2] transition-opacity duration-[1500ms] ease-out ${videoIn ? "opacity-0" : "opacity-100"}`}
+      />
       <div
         className={`relative transition-opacity duration-1000 ease-out ${revealed ? "opacity-100" : "opacity-0"}`}
       >
