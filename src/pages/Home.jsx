@@ -26,13 +26,13 @@ export default function Home() {
         style={{ filter: "blur(2px)", transform: "scale(1.04)" }}
       >
         <source
-          src={"https://media.base44.com/videos/public/6a67b5b8cea8c1982f3940ce/39169a6df_DJI_20260602085828_0009_D_1.mp4"}
+          src={"https://media.base44.com/videos/public/6a67b5b8cea8c1982f3940ce/bc7107c20_DJI_20260602085828_0009_D_2.mp4"}
           type="video/mp4"
         />
       </video>
       <div className="pointer-events-none absolute top-0 inset-x-0 h-[850px] bg-gradient-to-b from-iceblue/15 via-iceblue/10 to-[#f7f5f2]" />
       <div
-        className={`pointer-events-none absolute top-0 inset-x-0 h-[760px] bg-[#f7f5f2] transition-opacity duration-[1500ms] ease-out ${videoIn ? "opacity-0" : "opacity-100"}`}
+        className={`pointer-events-none absolute top-0 inset-x-0 h-[760px] bg-[#f7f5f2] transition-opacity duration-1000 ease-out ${videoIn ? "opacity-0" : "opacity-100"}`}
       />
       <div
         className={`relative transition-opacity duration-1000 ease-out ${revealed ? "opacity-100" : "opacity-0"}`}
