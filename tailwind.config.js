@@ -60,11 +60,11 @@ module.exports = {
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
   			},
-  			stonebg: '#F1F5F8',
-  			mist: '#DDE6EE',
-  			slatedeep: '#1D2B3A',
-  			coldstone: '#426E92',
-  			iceblue: '#3A93BD'
+  			stonebg: '#f7f5f2',
+  			mist: '#efeae2',
+  			slatedeep: '#1a1a1a',
+  			coldstone: '#b98e2e',
+  			iceblue: '#b98e2e'
   		},
   		fontFamily: {
   			heading: ['var(--font-heading)'],
