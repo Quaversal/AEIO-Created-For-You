@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import SiteNav from "@/components/SiteNav";
 import Hero from "@/components/Hero";
 import Programs from "@/components/Programs";
@@ -6,6 +6,13 @@ import Reviews from "@/components/Reviews";
 import SiteFooter from "@/components/SiteFooter";
 
 export default function Home() {
+  const [revealed, setRevealed] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setRevealed(true), 3000);
+    return () => clearTimeout(t);
+  }, []);
+
   return (
     <div className="relative min-h-screen bg-[#f7f5f2]">
       <video
@@ -22,13 +29,17 @@ export default function Home() {
         />
       </video>
       <div className="pointer-events-none absolute top-0 inset-x-0 h-[850px] bg-gradient-to-b from-iceblue/15 via-iceblue/10 to-[#f7f5f2]" />
-      <SiteNav />
-      <main className="relative z-10">
-        <Hero />
-        <Programs />
-        <Reviews />
-      </main>
-      <SiteFooter />
+      <div
+        className={`relative transition-opacity duration-1000 ease-out ${revealed ? "opacity-100" : "opacity-0"}`}
+      >
+        <SiteNav />
+        <main className="relative z-10">
+          <Hero />
+          <Programs />
+          <Reviews />
+        </main>
+        <SiteFooter />
+      </div>
     </div>
   );
 }
