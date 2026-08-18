@@ -46,6 +46,10 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
   body {
     @apply text-foreground font-body;
     background-color: #f7f5f2;
@@ -53,6 +57,7 @@
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    position: relative;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
