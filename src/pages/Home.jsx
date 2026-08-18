@@ -4,15 +4,29 @@ import Programs from "@/components/Programs";
 import Reviews from "@/components/Reviews";
 import SiteFooter from "@/components/SiteFooter";
 
+const FULL_TEXT = "What would you like to build?";
+
 export default function Home() {
   const [revealed, setRevealed] = useState(false);
   const [videoIn, setVideoIn] = useState(false);
+  const [typed, setTyped] = useState("");
 
   useEffect(() => {
     const t = setTimeout(() => setRevealed(true), 3000);
     const v = setTimeout(() => setVideoIn(true), 100);
     return () => { clearTimeout(t); clearTimeout(v); };
   }, []);
+
+  useEffect(() => {
+    if (!revealed) return;
+    let i = 0;
+    const id = setInterval(() => {
+      i += 1;
+      setTyped(FULL_TEXT.slice(0, i));
+      if (i >= FULL_TEXT.length) clearInterval(id);
+    }, 65);
+    return () => clearInterval(id);
+  }, [revealed]);
 
   return (
     <div className="relative min-h-screen bg-[#f7f5f2]">
@@ -21,7 +35,7 @@ export default function Home() {
         loop
         muted
         playsInline
-        className="pointer-events-none absolute top-0 inset-x-0 h-[760px] w-full object-cover"
+        className="pointer-events-none absolute top-0 inset-x-0 h-[760px] w-full object-cover lg:h-[920px]"
         style={{ filter: "blur(2px)", transform: "scale(1.04)" }}
       >
         <source
@@ -29,20 +43,23 @@ export default function Home() {
           type="video/mp4"
         />
       </video>
-      <div className="pointer-events-none absolute top-0 inset-x-0 h-[850px] bg-gradient-to-b from-iceblue/15 via-iceblue/10 to-[#f7f5f2]" />
+      <div className="pointer-events-none absolute top-0 inset-x-0 h-[850px] bg-gradient-to-b from-iceblue/15 via-iceblue/10 to-[#f7f5f2] lg:h-[1010px]" />
       <div
-        className={`pointer-events-none absolute top-0 inset-x-0 h-[760px] bg-[#f7f5f2] transition-opacity duration-1000 ease-out ${videoIn ? "opacity-0" : "opacity-100"}`}
+        className={`pointer-events-none absolute top-0 inset-x-0 h-[760px] bg-[#f7f5f2] transition-opacity duration-1000 ease-out lg:h-[920px] ${videoIn ? "opacity-0" : "opacity-100"}`}
       />
+
+      <section className="relative flex h-[760px] items-center justify-center px-6 text-center lg:h-[920px]">
+        <h1 className="font-heading text-4xl font-bold leading-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)] sm:text-6xl lg:text-7xl">
+          {typed}
+          <span className="ml-1 inline-block animate-pulse">|</span>
+        </h1>
+      </section>
+
       <div
         className={`relative transition-opacity duration-1000 ease-out ${revealed ? "opacity-100" : "opacity-0"}`}
       >
         <SiteNav />
         <main className="relative z-10">
-          <section className="flex h-[760px] items-center justify-center px-6 text-center">
-            <h1 className="font-heading text-4xl font-bold leading-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)] sm:text-6xl lg:text-7xl">
-              What would you like to build?
-            </h1>
-          </section>
           <Programs />
           <Reviews />
         </main>
