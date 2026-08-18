@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import SiteNav from "@/components/SiteNav";
-import Hero from "@/components/Hero";
 import Programs from "@/components/Programs";
 import Reviews from "@/components/Reviews";
 import SiteFooter from "@/components/SiteFooter";
@@ -39,7 +38,11 @@ export default function Home() {
       >
         <SiteNav />
         <main className="relative z-10">
-          <Hero />
+          <section className="flex h-[760px] items-center justify-center px-6 text-center">
+            <h1 className="font-heading text-4xl font-bold leading-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)] sm:text-6xl lg:text-7xl">
+              What would you like to build?
+            </h1>
+          </section>
           <Programs />
           <Reviews />
         </main>
