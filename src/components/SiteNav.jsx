@@ -69,6 +69,11 @@ export default function SiteNav() {
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </nav>
+      <div className="bg-gold px-4 py-2 text-center">
+        <p className="text-[11px] font-semibold tracking-label text-slatedeep sm:text-xs">
+          Website Under Construction. Making Big Changes.
+        </p>
+      </div>
       <AnimatePresence>
         {open &&
         <motion.div

@@ -17,7 +17,7 @@ export default function ProgramsPage() {
       />
       <div className="pointer-events-none absolute top-0 inset-x-0 h-[850px] bg-gradient-to-b from-iceblue/15 via-iceblue/10 to-[#f7f5f2]" />
       <SiteNav />
-      <main className="relative z-10 pt-20">
+      <main className="relative z-10 pt-28">
         <ProgramsDetail />
       </main>
       <SiteFooter />
