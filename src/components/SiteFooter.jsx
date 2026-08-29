@@ -33,6 +33,7 @@ export default function SiteFooter() {
               <li><a href="/about" className="transition hover:text-primary">About</a></li>
               <li><a href="#approach" className="transition hover:text-primary">Our Approach</a></li>
               <li><a href="/enroll" className="transition hover:text-primary">Enroll</a></li>
+              <li><a href="https://support.aeiocreatedforyou.org" className="transition hover:text-primary">Support</a></li>
             </ul>
           </div>
 
