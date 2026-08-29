@@ -48,6 +48,8 @@ export default function SiteNav() {
           )}
           <a
             href="https://gamesandapps.aeiocreatedforyou.org"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-sm font-medium text-foreground transition hover:text-primary">
 
             Apps
@@ -100,6 +102,8 @@ export default function SiteNav() {
             )}
               <a
               href="https://gamesandapps.aeiocreatedforyou.org"
+              target="_blank"
+              rel="noopener noreferrer"
               className="py-2 text-left text-sm font-medium text-foreground/80">
 
                 Apps
