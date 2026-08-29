@@ -62,6 +62,8 @@ export default function SiteNav() {
           </Link>
           <a
             href="https://staff-portal.aeiocreatedforyou.org"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-sm font-medium text-foreground transition hover:text-primary">
 
             Staff Portal
@@ -116,6 +118,8 @@ export default function SiteNav() {
               </Link>
               <a
               href="https://staff-portal.aeiocreatedforyou.org"
+              target="_blank"
+              rel="noopener noreferrer"
               className="py-2 text-left text-sm font-medium text-foreground/80">
 
                 Staff Portal
