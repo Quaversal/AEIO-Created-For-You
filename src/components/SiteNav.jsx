@@ -46,6 +46,12 @@ export default function SiteNav() {
               {item.label}
             </button>
           )}
+          <a
+            href="https://gamesandapps.aeiocreatedforyou.org"
+            className="text-sm font-medium text-foreground transition hover:text-primary">
+
+            Apps
+          </a>
           <Link
             to="/about"
             className="text-sm font-medium text-foreground transition hover:text-primary">
@@ -92,6 +98,12 @@ export default function SiteNav() {
                   {item.label}
                 </button>
             )}
+              <a
+              href="https://gamesandapps.aeiocreatedforyou.org"
+              className="py-2 text-left text-sm font-medium text-foreground/80">
+
+                Apps
+              </a>
               <Link
               to="/about"
               className="py-2 text-left text-sm font-medium text-foreground/80">
