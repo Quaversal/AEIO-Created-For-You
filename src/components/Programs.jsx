@@ -42,7 +42,7 @@ export default function Programs() {
               </div>
             </div>
             <p className="mt-5 text-foreground/75">
-              Tell us a little about what you're looking for... (self-paced classwork, artist development, college prep, etc.)
+              What is your email?
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <input
