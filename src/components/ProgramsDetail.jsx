@@ -31,7 +31,6 @@ const TABS = [
     includes: [
       "Graded assignments and progress reports",
       "College prep and counseling included",
-      "Semester-based calendar with set start dates",
     ],
     format: { icon: Users, label: "Format", value: ["Live cohort classes", "Forum style chat class", "Digital download classes"] },
     cadence: { icon: Clock, label: "Cadence", value: "Semester-based, fixed schedule" },
