@@ -18,7 +18,9 @@ export default function Programs() {
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
           <div className="max-w-2xl">
-            <span className="text-xs font-medium tracking-label text-primary">Programs</span>
+            <h2 className="font-heading text-3xl font-semibold text-foreground sm:text-4xl">
+              We create the building blocks you don't see...
+            </h2>
             <p className="mt-4 text-foreground/70">
               We provide fully customizable learning experiences tailored to YOU. Get started by taking our AEIO Compass survey below!
             </p>
