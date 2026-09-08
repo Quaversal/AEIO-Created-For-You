@@ -9,7 +9,7 @@ const TABS = [
   label: "Private Lessons",
   icon: User,
   tagline: "One-on-one, live instruction",
-  desc: "Work directly with a certified educator in focused, personalized sessions tailored to your learner's pace, goals, and interests.",
+  desc: "Work with experienced educators in personalized sessions.",
   features: [
   "1:1 live sessions with certified teachers",
   "Fully customized lesson plans",
