@@ -169,7 +169,7 @@ export default function ProgramsDetail() {
                   onClick={() => navigate("/enroll")}
                   className="inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
                 >
-                  Enroll in {current.label} <ArrowRight className="h-4 w-4" />
+                  {current.key === "full" ? "Check Availability" : `Enroll in ${current.label}`} <ArrowRight className="h-4 w-4" />
                 </button>
               </div>
             </div>
