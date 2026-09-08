@@ -17,7 +17,7 @@ export default function Programs() {
     <section id="programs" className="py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <div className="max-w-2xl">
+          <div className="mx-auto max-w-4xl text-center">
             <h2 className="font-heading text-3xl font-semibold text-foreground sm:text-4xl">
               We create the building blocks you don't see...
             </h2>
