@@ -34,7 +34,7 @@ const TABS = [
     ],
     format: { icon: Users, label: "Format", value: ["Live cohort classes", "Forum style chat class", "Digital download classes"] },
     cadence: { icon: Clock, label: "Cadence", value: "Semester-based, fixed schedule" },
-    bestFor: { icon: Target, label: "Best for", value: "Lifestyles wanting structure, community, and a recognized academic record" },
+    bestFor: { icon: Target, label: "Best for", value: "Students wanting structure and a more engaged learning environment" },
     pricing: "Starting at $1,200 / semester",
   },
   {
