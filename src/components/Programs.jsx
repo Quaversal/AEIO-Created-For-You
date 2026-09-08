@@ -61,10 +61,7 @@ export default function Programs() {
             <h2 className="mt-3 font-heading text-3xl font-semibold text-foreground sm:text-4xl">We create the building blocks you don't see...
 
             </h2>
-            <p className="mt-4 text-foreground/70">With our faculty ranging from PhD professors to accredited elementary school teachers, you'll find just what you're looking for below.
-
-
-            </p>
+            <p className="mt-4 text-foreground/70">We provide fully customizable learning experiences tailored to YOU. Get started by taking our AEIO Compass survey below!</p>
           </div>
         </Reveal>
 
