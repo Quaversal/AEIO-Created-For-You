@@ -28,13 +28,13 @@ const TABS = [
     icon: GraduationCap,
     tagline: "Fixed schedule, accredited curriculum",
     desc: "Join a structured cohort with live classes, graded assignments, and official transcripts. A complete academic experience with classmates, teachers, and the accountability of a real school calendar.",
-    includesLabel: "Choose your participation:",
     includes: [
-      "Live cohort classes",
-      "Forum style chat class",
-      "Digital download classes",
+      "Accredited coursework and official transcripts",
+      "Graded assignments and progress reports",
+      "College prep and counseling included",
+      "Semester-based calendar with set start dates",
     ],
-    format: { icon: Users, label: "Format", value: "Live cohort · 2–4 classes per week" },
+    format: { icon: Users, label: "Format", value: ["Live cohort classes", "Forum style chat class", "Digital download classes"] },
     cadence: { icon: Clock, label: "Cadence", value: "Semester-based, fixed schedule" },
     bestFor: { icon: Target, label: "Best for", value: "Families wanting structure, community, and a recognized academic record" },
     pricing: "Starting at $1,200 / semester",
@@ -134,7 +134,18 @@ export default function ProgramsDetail() {
                       <m.icon className="h-4 w-4" />
                       <span className="text-xs font-medium tracking-label">{m.label}</span>
                     </div>
-                    <p className="mt-2 text-sm text-foreground/75">{m.value}</p>
+                    {Array.isArray(m.value) ? (
+                      <ul className="mt-2 space-y-1.5">
+                        {m.value.map((v) => (
+                          <li key={v} className="flex items-start gap-2 text-sm text-foreground/75">
+                            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                            {v}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="mt-2 text-sm text-foreground/75">{m.value}</p>
+                    )}
                   </div>
                 ))}
               </div>
