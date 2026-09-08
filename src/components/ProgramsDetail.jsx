@@ -28,12 +28,11 @@ const TABS = [
     icon: GraduationCap,
     tagline: "Fixed schedule, accredited curriculum",
     desc: "Join a structured cohort with live classes, graded assignments, and official transcripts. A complete academic experience with classmates, teachers, and the accountability of a real school calendar.",
+    includesLabel: "Choose your participation:",
     includes: [
-      "Live cohort classes with classmates",
-      "Accredited coursework and official transcripts",
-      "Graded assignments and progress reports",
-      "College prep and counseling included",
-      "Semester-based calendar with set start dates",
+      "Live cohort classes",
+      "Forum style chat class",
+      "Digital download classes",
     ],
     format: { icon: Users, label: "Format", value: "Live cohort · 2–4 classes per week" },
     cadence: { icon: Clock, label: "Cadence", value: "Semester-based, fixed schedule" },
@@ -140,7 +139,7 @@ export default function ProgramsDetail() {
                 ))}
               </div>
 
-              <h4 className="mt-7 text-xs font-semibold tracking-label text-foreground/50">What's included</h4>
+              <h4 className="mt-7 text-xs font-semibold tracking-label text-foreground/50">{current.includesLabel || "What's included"}</h4>
               <ul className="mt-3 grid gap-3 sm:grid-cols-2">
                 {current.includes.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-sm text-foreground/75">
