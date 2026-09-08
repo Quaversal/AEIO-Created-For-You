@@ -29,7 +29,6 @@ const TABS = [
     tagline: "Fixed schedule, accredited curriculum",
     desc: "Join a structured cohort with live classes, graded assignments, and official transcripts. A complete academic experience with classmates, teachers, and the accountability of a real school calendar.",
     includes: [
-      "Accredited coursework and official transcripts",
       "Graded assignments and progress reports",
       "College prep and counseling included",
       "Semester-based calendar with set start dates",
