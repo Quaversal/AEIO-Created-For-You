@@ -34,7 +34,7 @@ const TABS = [
     ],
     format: { icon: Users, label: "Format", value: ["Live cohort classes", "Forum style chat class", "Digital download classes"] },
     cadence: { icon: Clock, label: "Cadence", value: "Semester-based, fixed schedule" },
-    bestFor: { icon: Target, label: "Best for", value: "Families wanting structure, community, and a recognized academic record" },
+    bestFor: { icon: Target, label: "Best for", value: "Lifestyles wanting structure, community, and a recognized academic record" },
     pricing: "Starting at $1,200 / semester",
   },
   {
@@ -52,7 +52,7 @@ const TABS = [
     ],
     format: { icon: Users, label: "Format", value: "Asynchronous, on-demand · self-guided" },
     cadence: { icon: Clock, label: "Cadence", value: "Go at your own pace" },
-    bestFor: { icon: Target, label: "Best for", value: "Motivated, independent learners and highly mobile families" },
+    bestFor: { icon: Target, label: "Best for", value: "Motivated, independent learners and highly mobile lifestyles" },
     pricing: "Starting at $120 / month",
   },
 ];
