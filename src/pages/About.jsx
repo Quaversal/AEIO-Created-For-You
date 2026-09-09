@@ -15,7 +15,7 @@ export default function About() {
           <div className="pointer-events-none absolute inset-0 dot-grid opacity-20" />
           <div className="pointer-events-none absolute -top-24 right-10 h-80 w-80 rounded-full bg-iceblue/25 blur-3xl" />
           <div className="pointer-events-none absolute bottom-0 -left-20 h-80 w-80 rounded-full bg-coldstone/40 blur-3xl" />
-          <div className="relative mx-auto max-w-4xl px-6 text-center">
+          <div className="relative mx-auto max-w-6xl px-6 text-center">
             <Reveal>
               <span className="text-xs font-medium tracking-label text-iceblue">Our Belief</span>
               <p className="mt-6 font-display text-3xl font-medium leading-snug sm:text-4xl md:text-[2.75rem]">
