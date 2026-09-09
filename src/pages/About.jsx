@@ -24,10 +24,12 @@ export default function About() {
               <p className="mt-8 text-sm font-medium tracking-label text-iceblue">— Sir Ken Robinson</p>
             </Reveal>
           </div>
+          {/* Gradient transition from dark blue to cream */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-stonebg" />
         </section>
 
         {/* Body + image */}
-        <section className="bg-stonebg py-20 sm:py-28">
+        <section className="relative py-20 sm:py-28">
           <div className="mx-auto max-w-6xl px-6">
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <Reveal>
