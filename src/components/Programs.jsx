@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ArrowRight, Compass } from "lucide-react";
+import { Link } from "react-router-dom";
 import Reveal from "./Reveal";
 
 const COMPASS_URL = "https://compass.aeiocreatedforyou.org";
@@ -61,6 +62,12 @@ export default function Programs() {
               </button>
             </div>
           </form>
+          <p className="mt-6 text-center text-sm text-foreground/70">
+            Not sure where to start?{" "}
+            <Link to="/programs" className="font-semibold text-primary underline-offset-4 hover:underline">
+              Check out our pre-made programs
+            </Link>
+          </p>
         </Reveal>
       </div>
     </section>
