@@ -17,8 +17,7 @@ export default function About() {
           <div className="pointer-events-none absolute bottom-0 -left-20 h-80 w-80 rounded-full bg-coldstone/40 blur-3xl" />
           <div className="relative mx-auto max-w-6xl px-6 text-center">
             <Reveal>
-              <span className="text-xs font-medium tracking-label text-iceblue">Our Belief</span>
-              <p className="mt-6 font-display text-3xl font-medium leading-snug sm:text-4xl md:text-[2.75rem]">
+              <p className="font-display text-3xl font-medium leading-snug sm:text-4xl md:text-[2.75rem]">
                 "We need to move from a system of education based on industrialism and conformity to
                 one based on human flourish and diversity."
               </p>
