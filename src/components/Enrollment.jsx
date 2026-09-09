@@ -44,7 +44,7 @@ export default function Enrollment() {
               scheduling options, and next steps.
             </p>
             <ul className="mt-8 space-y-3">
-              {["No commitment to explore", "Personalized program match", "Flexible start dates year-round"].map((t) =>
+              {["No commitment to explore", "Personalized program match", "Start anytime"].map((t) =>
               <li key={t} className="flex items-center gap-3 text-sm text-white/80">
                   <span className="flex h-5 w-5 items-center justify-center rounded-full bg-iceblue/20">
                     <Check className="h-3 w-3 text-iceblue" />
