@@ -38,33 +38,33 @@ export default function Enrollment() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <Reveal>
             <span className="text-xs font-medium tracking-label text-iceblue">Enroll</span>
-            <h2 className="mt-3 font-heading text-3xl font-semibold sm:text-4xl">Begin your child's journey</h2>
+            <h2 className="mt-3 font-heading text-3xl font-semibold sm:text-4xl">Begin your journey</h2>
             <p className="mt-4 max-w-md text-white/85">
               Tell us a little about your learner. An advisor will follow up with program recommendations,
               scheduling options, and next steps.
             </p>
             <ul className="mt-8 space-y-3">
-              {["No commitment to explore", "Personalized program match", "Flexible start dates year-round"].map((t) => (
-                <li key={t} className="flex items-center gap-3 text-sm text-white/80">
+              {["No commitment to explore", "Personalized program match", "Flexible start dates year-round"].map((t) =>
+              <li key={t} className="flex items-center gap-3 text-sm text-white/80">
                   <span className="flex h-5 w-5 items-center justify-center rounded-full bg-iceblue/20">
                     <Check className="h-3 w-3 text-iceblue" />
                   </span>
                   {t}
                 </li>
-              ))}
+              )}
             </ul>
           </Reveal>
 
           <Reveal delay={120}>
             <div className="rounded-3xl border border-border bg-white p-6 text-foreground shadow-2xl shadow-black/30 sm:p-8">
               <AnimatePresence mode="wait">
-                {done ? (
-                  <motion.div
-                    key="done"
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="flex flex-col items-center py-10 text-center"
-                  >
+                {done ?
+                <motion.div
+                  key="done"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex flex-col items-center py-10 text-center">
+                  
                     <span className="flex h-14 w-14 items-center justify-center rounded-full bg-iceblue/20">
                       <Check className="h-7 w-7 text-iceblue" />
                     </span>
@@ -73,83 +73,83 @@ export default function Enrollment() {
                       We've received your inquiry and will be in touch within one business day.
                     </p>
                     <button
-                      onClick={() => {
-                        setDone(false);
-                        setForm({ parent_name: "", email: "", student_grade: "Elementary", message: "" });
-                      }}
-                      className="mt-6 rounded-xl border border-border px-5 py-2 text-sm font-medium text-foreground/70 transition hover:bg-stonebg"
-                    >
+                    onClick={() => {
+                      setDone(false);
+                      setForm({ parent_name: "", email: "", student_grade: "Elementary", message: "" });
+                    }}
+                    className="mt-6 rounded-xl border border-border px-5 py-2 text-sm font-medium text-foreground/70 transition hover:bg-stonebg">
+                    
                       Submit another
                     </button>
-                  </motion.div>
-                ) : (
-                  <motion.form
-                    key="form"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    onSubmit={submit}
-                    className="space-y-4"
-                  >
+                  </motion.div> :
+
+                <motion.form
+                  key="form"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  onSubmit={submit}
+                  className="space-y-4">
+                  
                     <div>
                       <label className="text-xs font-medium tracking-label text-foreground/70">Parent / Guardian Name</label>
                       <input
-                        required
-                        value={form.parent_name}
-                        onChange={(e) => update("parent_name", e.target.value)}
-                        className="mt-1.5 w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground placeholder-foreground/40 outline-none focus:border-iceblue"
-                        placeholder="Jane Doe"
-                      />
+                      required
+                      value={form.parent_name}
+                      onChange={(e) => update("parent_name", e.target.value)}
+                      className="mt-1.5 w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground placeholder-foreground/40 outline-none focus:border-iceblue"
+                      placeholder="Jane Doe" />
+                    
                     </div>
                     <div>
                       <label className="text-xs font-medium tracking-label text-foreground/70">Email</label>
                       <input
-                        required
-                        type="email"
-                        value={form.email}
-                        onChange={(e) => update("email", e.target.value)}
-                        className="mt-1.5 w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground placeholder-foreground/40 outline-none focus:border-iceblue"
-                        placeholder="jane@email.com"
-                      />
+                      required
+                      type="email"
+                      value={form.email}
+                      onChange={(e) => update("email", e.target.value)}
+                      className="mt-1.5 w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground placeholder-foreground/40 outline-none focus:border-iceblue"
+                      placeholder="jane@email.com" />
+                    
                     </div>
                     <div>
                       <label className="text-xs font-medium tracking-label text-foreground/70">Student Grade Level</label>
                       <select
-                        value={form.student_grade}
-                        onChange={(e) => update("student_grade", e.target.value)}
-                        className="mt-1.5 w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none focus:border-iceblue"
-                      >
-                        {GRADES.map((g) => (
-                          <option key={g} value={g} className="bg-white text-foreground">
+                      value={form.student_grade}
+                      onChange={(e) => update("student_grade", e.target.value)}
+                      className="mt-1.5 w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground outline-none focus:border-iceblue">
+                      
+                        {GRADES.map((g) =>
+                      <option key={g} value={g} className="bg-white text-foreground">
                             {g}
                           </option>
-                        ))}
+                      )}
                       </select>
                     </div>
                     <div>
                       <label className="text-xs font-medium tracking-label text-foreground/70">Message (optional)</label>
                       <textarea
-                        value={form.message}
-                        onChange={(e) => update("message", e.target.value)}
-                        rows={3}
-                        className="mt-1.5 w-full resize-none rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground placeholder-foreground/40 outline-none focus:border-iceblue"
-                        placeholder="Tell us about your learner's interests and goals."
-                      />
+                      value={form.message}
+                      onChange={(e) => update("message", e.target.value)}
+                      rows={3}
+                      className="mt-1.5 w-full resize-none rounded-xl border border-border bg-white px-4 py-3 text-sm text-foreground placeholder-foreground/40 outline-none focus:border-iceblue"
+                      placeholder="Tell us about your learner's interests and goals." />
+                    
                     </div>
                     <button
-                      type="submit"
-                      disabled={loading}
-                      className="flex w-full items-center justify-center gap-2 rounded-xl bg-iceblue px-5 py-3 text-sm font-semibold text-slatedeep transition hover:bg-iceblue/90 disabled:opacity-60"
-                    >
+                    type="submit"
+                    disabled={loading}
+                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-iceblue px-5 py-3 text-sm font-semibold text-slatedeep transition hover:bg-iceblue/90 disabled:opacity-60">
+                    
                       {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
                       {loading ? "Sending..." : "Request Info"}
                     </button>
                   </motion.form>
-                )}
+                }
               </AnimatePresence>
             </div>
           </Reveal>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
