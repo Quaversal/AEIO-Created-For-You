@@ -63,9 +63,9 @@ export default function Programs() {
             </div>
           </form>
           <p className="mt-6 text-center text-sm text-foreground/70">
-            Not sure where to start?{" "}
+            Not sure what you're looking for?{" "}
             <Link to="/programs" className="font-semibold text-primary underline-offset-4 hover:underline">
-              Check out our pre-made programs
+              Check out our programs page here
             </Link>
           </p>
         </Reveal>
