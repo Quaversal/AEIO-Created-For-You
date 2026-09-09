@@ -52,7 +52,7 @@
   }
   body {
     @apply text-foreground font-body;
-    background-color: #f7f5f2;
+    background-color: #eef1f5;
     font-size: 18px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
