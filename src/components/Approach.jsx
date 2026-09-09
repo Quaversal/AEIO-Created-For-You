@@ -12,17 +12,17 @@ const PILLARS = [
 
 export default function Approach() {
   return (
-    <section id="approach" className="bg-mist/50 py-24 sm:py-32">
+    <section id="approach" className="bg-stonebg py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
           <Reveal>
             <span className="text-xs font-medium tracking-label text-primary">Our Approach</span>
             <h2 className="mt-3 font-heading text-3xl font-semibold text-foreground sm:text-4xl">
-              Why families choose AEIO
+              Why learners choose AEIO
             </h2>
             <p className="mt-4 text-foreground/70">
-              We believe homeschooling works best when it's personal. So we built a model that bends to
-              the child — not the other way around.
+              We believe homeschooling works best when it's personal. So we built a model that bends
+              to the child — not the other way around.
             </p>
             <div className="mt-10 grid grid-cols-3 gap-6">
               <ImpactCounter target={2400} suffix="+" label="Active learners" />
@@ -34,8 +34,8 @@ export default function Approach() {
           <div className="grid gap-5 sm:grid-cols-2">
             {PILLARS.map((p, i) => (
               <Reveal key={p.title} delay={i * 80}>
-                <div className="h-full rounded-2xl border border-border bg-card p-6">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <div className="group h-full rounded-2xl border border-border bg-card p-6 shadow-sm transition hover:border-primary/40 hover:shadow-md">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
                     <p.icon className="h-5 w-5" />
                   </span>
                   <h3 className="mt-4 font-heading text-lg font-semibold text-foreground">{p.title}</h3>
