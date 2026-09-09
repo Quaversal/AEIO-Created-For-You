@@ -63,23 +63,10 @@ export default function ProgramsDetail() {
   const current = TABS.find((t) => t.key === active);
 
   return (
-    <section id="programs" className="py-28 sm:py-36">
+    <section id="programs" className="bg-stonebg py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <Reveal>
-          <div className="max-w-2xl">
-            <span className="text-xs font-medium tracking-label text-primary">Programs</span>
-            <h2 className="mt-3 font-heading text-3xl font-semibold text-foreground sm:text-4xl">
-              Choose your learning path
-            </h2>
-            <p className="mt-4 text-foreground/70">
-              Three ways to learn with AEIO — from one-on-one teaching to full cohorts to fully
-              independent study. Explore each in detail below.
-            </p>
-          </div>
-        </Reveal>
-
         <Reveal delay={120}>
-          <div className="mt-14 grid gap-6 lg:grid-cols-[320px_1fr]">
+          <div className="grid gap-6 lg:grid-cols-[320px_1fr]">
             {/* Vertical tabs */}
             <div className="flex flex-col gap-3">
               {TABS.map((t) => {
