@@ -65,7 +65,7 @@ export default function Programs() {
           <p className="mt-6 text-center text-sm text-foreground/70">
             Not sure what you're looking for?{" "}
             <Link to="/programs" className="font-semibold text-primary underline-offset-4 hover:underline">
-              Check out our programs page here
+              Check out our programs page
             </Link>
           </p>
         </Reveal>
