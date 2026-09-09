@@ -24,7 +24,7 @@ export default function About() {
               <p className="mt-8 text-sm font-medium tracking-label text-iceblue">— Sir Ken Robinson</p>
             </Reveal>
           </div>
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-stonebg" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-stonebg" />
         </section>
 
         {/* Body + image */}
