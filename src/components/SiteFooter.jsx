@@ -31,7 +31,6 @@ export default function SiteFooter() {
             <h4 className="text-xs font-semibold tracking-label text-foreground/50">Company</h4>
             <ul className="mt-3 space-y-2 text-sm text-foreground/70">
               <li><a href="/about" className="transition hover:text-primary">About</a></li>
-              <li><a href="#approach" className="transition hover:text-primary">Our Approach</a></li>
               <li><a href="/enroll" className="transition hover:text-primary">Enroll</a></li>
               <li><a href="https://support.aeiocreatedforyou.org" target="_blank" rel="noopener noreferrer" className="transition hover:text-primary">Support</a></li>
             </ul>
