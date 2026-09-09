@@ -60,7 +60,7 @@ module.exports = {
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
   			},
-  			stonebg: '#eef1f5',
+  			stonebg: '#dde2ea',
   			mist: '#efeae2',
   			slatedeep: '#1a1a1a',
   			coldstone: '#1e3a8a',
