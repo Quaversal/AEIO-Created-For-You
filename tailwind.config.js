@@ -61,6 +61,7 @@ module.exports = {
   				ring: 'hsl(var(--sidebar-ring))'
   			},
   			stonebg: '#dde2ea',
+  			cream: '#f7f5f2',
   			mist: '#efeae2',
   			slatedeep: '#1a1a1a',
   			coldstone: '#1e3a8a',
