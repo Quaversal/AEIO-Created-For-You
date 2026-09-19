@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { User, GraduationCap, Compass, Check, Clock, Users, Target, ArrowRight } from "lucide-react";
 import Reveal from "./Reveal";
 
@@ -58,9 +58,18 @@ const TABS = [
 ];
 
 export default function ProgramsDetail() {
-  const [active, setActive] = useState("private");
+  const location = useLocation();
+  const initialTab = location.hash.replace("#", "");
+  const [active, setActive] = useState(TABS.some((t) => t.key === initialTab) ? initialTab : "private");
   const navigate = useNavigate();
   const current = TABS.find((t) => t.key === active);
+
+  useEffect(() => {
+    const hash = location.hash.replace("#", "");
+    if (TABS.some((t) => t.key === hash)) {
+      setActive(hash);
+    }
+  }, [location.hash]);
 
   return (
     <section id="programs" className="bg-stonebg py-20 sm:py-24">
