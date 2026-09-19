@@ -23,7 +23,7 @@ export default function Programs() {
               Providing fully customizable programming and development opportunities tailored to YOU
             </h2>
             <p className="mt-4 text-foreground/70">
-              We provide fully customizable learning experiences tailored to YOU. Get started by taking our AEIO Compass survey below!
+              Get started by taking our AEIO Compass survey below!
             </p>
           </div>
         </Reveal>
