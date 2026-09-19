@@ -20,7 +20,7 @@ export default function Programs() {
         <Reveal>
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="font-heading text-3xl font-semibold text-foreground sm:text-4xl">
-              We create the building blocks you don't see...
+              Providing fully customizable personal programming and development opportunities that are tailored to YOU
             </h2>
             <p className="mt-4 text-foreground/70">
               We provide fully customizable learning experiences tailored to YOU. Get started by taking our AEIO Compass survey below!
