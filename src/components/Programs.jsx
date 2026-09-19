@@ -63,10 +63,11 @@ export default function Programs() {
             </div>
           </form>
           <p className="mt-6 text-center text-sm text-foreground/70">
-            Not sure what you're looking for?{" "}
+            Explore all we have to offer in our{" "}
             <Link to="/programs" className="font-semibold text-primary underline-offset-4 hover:underline">
-              Check out our programs page
+              AEIO Digital LookBook
             </Link>
+            .
           </p>
         </Reveal>
       </div>
