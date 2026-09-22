@@ -41,7 +41,7 @@ export default function SiteFooter() {
             <ul className="mt-3 space-y-2 text-sm text-foreground/70">
               <li className="flex items-center gap-2"><a href="mailto:hello@aeiocreatedforyou.org" className="flex items-center gap-2 transition hover:text-primary"><Mail className="h-4 w-4 text-primary" /> hello@aeiocreatedforyou.org</a></li>
               <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-primary" /> (646) 612-1375</li>
-              <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-primary" /> Online & nationwide</li>
+              <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-primary" /> Online and International</li>
             </ul>
           </div>
         </div>
