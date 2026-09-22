@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { User, GraduationCap, Compass, Check, Clock, Users, Target, ArrowRight } from "lucide-react";
+import { User, GraduationCap, Compass, Check, Clock, Users, Target, ArrowRight, Gamepad2 } from "lucide-react";
 import Reveal from "./Reveal";
 
 const TABS = [
@@ -54,6 +54,24 @@ const TABS = [
     cadence: { icon: Clock, label: "Cadence", value: "Go at your own pace" },
     bestFor: { icon: Target, label: "Best for", value: "Motivated, independent learners and highly mobile lifestyles" },
     pricing: "Starting at $120 / month",
+  },
+  {
+    key: "apps-games",
+    label: "Apps & Games",
+    icon: Gamepad2,
+    tagline: "Learn through play and interactive tools",
+    desc: "Access our growing library of educational apps and games designed to make learning sticky, engaging, and fun. Perfect for reinforcing skills, exploring new topics, and keeping curious minds active between lessons.",
+    includes: [
+      "Curated educational games across core subjects",
+      "Interactive skill-building apps and challenges",
+      "Progress tracking and achievement rewards",
+      "New content added regularly",
+      "Accessible on web, tablet, and mobile",
+    ],
+    format: { icon: Users, label: "Format", value: "On-demand apps and browser-based games" },
+    cadence: { icon: Clock, label: "Cadence", value: "Play anytime, at your own pace" },
+    bestFor: { icon: Target, label: "Best for", value: "Students who learn best through play and interactive exploration" },
+    pricing: "Included with any program",
   },
 ];
 
