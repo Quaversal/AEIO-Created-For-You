@@ -34,12 +34,12 @@ export default function Programs() {
             className="mt-14 mx-auto max-w-2xl rounded-2xl border border-border bg-card p-8 shadow-sm"
           >
             <div className="flex items-center gap-3">
-              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold/15 text-gold">
                 <Compass className="h-6 w-6" />
               </span>
               <div>
                 <h3 className="font-heading text-2xl font-semibold text-foreground">AEIO Compass</h3>
-                <p className="text-xs font-medium tracking-label text-primary/70">Start your survey</p>
+                <p className="text-xs font-medium tracking-label text-gold/80">Start your survey</p>
               </div>
             </div>
             <p className="mt-5 text-foreground/75">
@@ -56,7 +56,7 @@ export default function Programs() {
               <button
                 type="submit"
                 disabled={!answer.trim()}
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-50"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-gold px-5 py-3 text-sm font-semibold text-slatedeep transition hover:bg-gold/90 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 Submit <ArrowRight className="h-4 w-4" />
               </button>
@@ -64,7 +64,7 @@ export default function Programs() {
           </form>
           <p className="mt-6 text-center text-sm text-foreground/70">
             Explore all we have to offer in our{" "}
-            <Link to="/programs" className="font-semibold text-primary underline-offset-4 hover:underline">
+            <Link to="/programs" className="font-semibold text-gold underline-offset-4 hover:underline">
               AEIO Digital LookBook
             </Link>
             .
