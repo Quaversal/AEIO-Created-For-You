@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingBag } from "lucide-react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useCart } from "@/lib/CartContext";
+import CartDrawer from "@/components/CartDrawer";
 
 const NAV_ITEMS = [
 { label: "Programs", to: "/programs" }];
@@ -11,6 +13,7 @@ export default function SiteNav() {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const { count, setIsOpen } = useCart();
 
   const scrollTo = (href) => {
     setOpen(false);
@@ -69,6 +72,18 @@ export default function SiteNav() {
             Staff Portal
           </a>
           <button
+            onClick={() => setIsOpen(true)}
+            className="relative text-foreground transition hover:text-primary"
+            aria-label="Open cart"
+          >
+            <ShoppingBag className="h-5 w-5" />
+            {count > 0 && (
+              <span className="absolute -right-2 -top-2 flex h-4 min-w-4 items-center justify-center rounded-full bg-primary px-1 text-[10px] font-bold text-primary-foreground">
+                {count}
+              </span>
+            )}
+          </button>
+          <button
             onClick={() => navigate("/enroll")}
             className="rounded-lg bg-slatedeep px-4 py-2 text-sm font-semibold text-primary-foreground shadow-md ring-1 ring-white/30 transition hover:bg-slatedeep/90">
 
@@ -120,6 +135,12 @@ export default function SiteNav() {
                 Staff Portal
               </a>
               <button
+                onClick={() => { setOpen(false); setIsOpen(true); }}
+                className="flex items-center gap-2 py-2 text-left text-sm font-medium text-foreground/80"
+              >
+                <ShoppingBag className="h-4 w-4" /> Cart {count > 0 && `(${count})`}
+              </button>
+              <button
               onClick={() => navigate("/enroll")}
               className="mt-2 rounded-lg bg-slatedeep px-4 py-2 text-sm font-semibold text-primary-foreground shadow-md ring-1 ring-white/30">
 
@@ -129,6 +150,7 @@ export default function SiteNav() {
           </motion.div>
         }
       </AnimatePresence>
+      <CartDrawer />
     </header>);
 
 }

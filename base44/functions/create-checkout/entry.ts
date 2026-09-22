@@ -70,27 +70,50 @@ Deno.serve(async (req: Request) => {
 
     // ===== APP-SPECIFIC =====
     // Resolve what is being bought AND its price SERVER-SIDE. NEVER trust a price sent by the
-    // client — a buyer can tamper the request body and pay any amount. The client sends only a
-    // product identifier; look up the authoritative price here (a Product entity, a config map,
-    // etc.). For a subscription, set `subscriptionInfo` (frequency/interval/billingCycles).
-    const productId = String(body.productId ?? "");
-    // Quantity is buyer-controlled, so VALIDATE it server-side. Check the RAW value is a positive
-    // integer BEFORE using it — do NOT Math.trunc first, or a fractional POST (e.g. 1.9) silently
-    // passes as 1 and charges a quantity the UI never allowed. For a plan / fixed-entitlement product,
-    // hard-code `1` and ignore the body; for a genuine multi-unit product, also enforce YOUR own max.
-    const quantity = Number(body.quantity ?? 1);
-    if (!Number.isInteger(quantity) || quantity < 1) {
-      return new Response(JSON.stringify({ error: "Invalid quantity" }), { status: 400 });
+    // client — a buyer can tamper the request body and pay any amount. The client sends only
+    // product identifiers; we look up the authoritative price from this server-side catalog.
+    const PRODUCTS: Record<string, { name: string; price: string; currency: string; subscription?: { frequency: string } }> = {
+      "private-lesson": { name: "Private Lesson Session", price: "60.00", currency: "USD" },
+      "full-course": { name: "Full Course Semester", price: "1200.00", currency: "USD" },
+      "self-paced": { name: "Self-Paced Program (Monthly)", price: "120.00", currency: "USD", subscription: { frequency: "MONTH" } },
+    };
+
+    const requestedItems = Array.isArray(body.items) ? body.items : [];
+    if (requestedItems.length === 0) {
+      return new Response(JSON.stringify({ error: "No items in cart" }), { status: 400 });
     }
-    // Example — replace with your real trusted product source:
-    //   const product = (await base44.asServiceRole.entities.Product.filter({ id: productId }))[0];
-    //   if (!product) return new Response(JSON.stringify({ error: "Unknown product" }), { status: 400 });
-    //   const productName = product.name; const price = String(product.price); const currency = product.currency ?? "USD";
-    const productName = "Purchase"; // TODO: from your trusted product source
-    const price = "0.00";           // TODO: authoritative per-unit price (major units), resolved server-side
-    const currency = "USD";
-    // For a SUBSCRIPTION set this to Wix's subscriptionInfo; leave null for a one-time payment.
-    const subscriptionInfo = null;
+
+    const cartItems: Array<Record<string, unknown>> = [];
+    let total = 0;
+    let totalQuantity = 0;
+    const productNames: string[] = [];
+    const productIds: string[] = [];
+    let currency = "USD";
+    for (const ri of requestedItems) {
+      const pid = String(ri.productId ?? "");
+      const product = PRODUCTS[pid];
+      if (!product) {
+        return new Response(JSON.stringify({ error: "Unknown product" }), { status: 400 });
+      }
+      // Quantity is buyer-controlled, so VALIDATE the RAW value is a positive integer BEFORE using it.
+      const qty = Number(ri.quantity ?? 1);
+      if (!Number.isInteger(qty) || qty < 1) {
+        return new Response(JSON.stringify({ error: "Invalid quantity" }), { status: 400 });
+      }
+      const item: Record<string, unknown> = { name: product.name, quantity: qty, price: product.price };
+      if (product.subscription) {
+        item.subscriptionInfo = { subscriptionSettings: { frequency: product.subscription.frequency } };
+      }
+      cartItems.push(item);
+      total += parseFloat(product.price) * qty;
+      totalQuantity += qty;
+      productNames.push(product.name);
+      productIds.push(pid);
+      currency = product.currency;
+    }
+    const productName = productNames.join(", ");
+    const productId = productIds.join(",");
+    const quantity = totalQuantity;
     // Where Wix returns the buyer. Both MUST be real, PUBLICLY reachable routes in this app: the
     // returning buyer is often anonymous, so a missing or login-gated route strands a paid customer.
     // Match your router exactly — `/ThankYou`, not `/thank-you`.
@@ -98,7 +121,6 @@ Deno.serve(async (req: Request) => {
     const postFlowPath = "/";
     // ===== END APP-SPECIFIC =====
 
-    const total = parseFloat(price) * quantity;
     if (!(total >= 0.5)) {
       // Wix rejects charges under 0.50 in the charged currency (major units, not cents).
       return new Response(JSON.stringify({ error: "Amount must be at least 0.50" }), { status: 400 });
@@ -106,7 +128,7 @@ Deno.serve(async (req: Request) => {
 
     const constructBody = {
       cart: {
-        items: [{ name: productName, quantity, price, ...(subscriptionInfo ? { subscriptionInfo } : {}) }],
+        items: cartItems,
         // Prefill the signed-in buyer's email if we have one; anonymous buyers enter it on Wix.
         ...(appUser?.email ? { customerInfo: { email: appUser.email } } : {}),
       },

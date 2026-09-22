@@ -15,6 +15,8 @@ import Login from '@/pages/Login';
 import Register from '@/pages/Register';
 import ForgotPassword from '@/pages/ForgotPassword';
 import ResetPassword from '@/pages/ResetPassword';
+import ThankYou from '@/pages/ThankYou';
+import { CartProvider } from '@/lib/CartContext';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -52,6 +54,7 @@ const AuthenticatedApp = () => {
       <Route path="/register" element={<Register />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/reset-password" element={<ResetPassword />} />
+      <Route path="/ThankYou" element={<ThankYou />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
@@ -63,11 +66,13 @@ function App() {
   return (
     <AuthProvider>
       <QueryClientProvider client={queryClientInstance}>
-        <Router>
-          <ScrollToTop />
-          <AuthenticatedApp />
-        </Router>
-        <Toaster />
+        <CartProvider>
+          <Router>
+            <ScrollToTop />
+            <AuthenticatedApp />
+          </Router>
+          <Toaster />
+        </CartProvider>
       </QueryClientProvider>
     </AuthProvider>
   )

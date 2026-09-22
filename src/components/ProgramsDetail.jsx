@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { User, GraduationCap, Compass, Check, Clock, Users, Target, ArrowRight, Gamepad2 } from "lucide-react";
+import { User, GraduationCap, Compass, Check, Clock, Users, Target, ArrowRight, Gamepad2, ShoppingBag } from "lucide-react";
+import { useCart } from "@/lib/CartContext";
+import { PRODUCTS } from "@/lib/products";
 import Reveal from "./Reveal";
 
 const TABS = [
@@ -20,6 +22,7 @@ const TABS = [
     format: { icon: Users, label: "Format", value: "Live, one-on-one · 45–60 min sessions" },
     cadence: { icon: Clock, label: "Cadence", value: "Weekly or bi-weekly — you choose" },
     bestFor: { icon: Target, label: "Best for", value: "Students needing personalized attention, acceleration, or catch-up support" },
+    productId: "private-lesson",
     pricing: "Starting at $60 / session",
   },
   {
@@ -35,6 +38,7 @@ const TABS = [
     format: { icon: Users, label: "Format", value: ["Live cohort classes", "Forum style chat class", "Digital download classes"] },
     cadence: { icon: Clock, label: "Cadence", value: "Semester-based, fixed schedule" },
     bestFor: { icon: Target, label: "Best for", value: "Students wanting structure and a more engaged learning environment" },
+    productId: "full-course",
     pricing: "Starting at $1,200 / semester",
   },
   {
@@ -53,6 +57,7 @@ const TABS = [
     format: { icon: Users, label: "Format", value: "Asynchronous, on-demand · self-guided" },
     cadence: { icon: Clock, label: "Cadence", value: "Go at your own pace" },
     bestFor: { icon: Target, label: "Best for", value: "Motivated, independent learners and highly mobile lifestyles" },
+    productId: "self-paced",
     pricing: "Starting at $120 / month",
   },
   {
@@ -71,11 +76,13 @@ const TABS = [
     format: { icon: Users, label: "Format", value: "On-demand apps and browser-based games" },
     cadence: { icon: Clock, label: "Cadence", value: "Play anytime, at your own pace" },
     bestFor: { icon: Target, label: "Best for", value: "Students who learn best through play and interactive exploration" },
+    externalUrl: "https://gamesandapps.aeiocreatedforyou.org",
     pricing: "Included with any program",
   },
 ];
 
 export default function ProgramsDetail() {
+  const { addItem } = useCart();
   const location = useLocation();
   const initialTab = location.hash.replace("#", "");
   const [active, setActive] = useState(TABS.some((t) => t.key === initialTab) ? initialTab : "private");
@@ -179,12 +186,23 @@ export default function ProgramsDetail() {
                   <div className="text-xs font-medium tracking-label text-foreground/50">Pricing</div>
                   <div className="font-heading text-xl font-semibold text-foreground">{current.pricing}</div>
                 </div>
-                <button
-                  onClick={() => navigate("/enroll")}
-                  className="inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
-                >
-                  {current.key === "full" ? "Check Availability" : `Enroll in ${current.label}`} <ArrowRight className="h-4 w-4" />
-                </button>
+                {current.productId ? (
+                  <button
+                    onClick={() => addItem(PRODUCTS[current.productId])}
+                    className="inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
+                  >
+                    Add to Cart <ShoppingBag className="h-4 w-4" />
+                  </button>
+                ) : (
+                  <a
+                    href={current.externalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
+                  >
+                    Visit Apps Page <ArrowRight className="h-4 w-4" />
+                  </a>
+                )}
               </div>
             </div>
           </div>
