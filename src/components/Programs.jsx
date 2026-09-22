@@ -64,7 +64,7 @@ export default function Programs() {
           </form>
           <p className="mt-6 text-center text-sm text-foreground/70">
             Explore all we have to offer in our{" "}
-            <Link to="/programs" className="font-semibold text-gold underline-offset-4 hover:underline">
+            <Link to="/programs" className="font-semibold text-primary underline-offset-4 hover:underline">
               AEIO Digital LookBook
             </Link>
             .
