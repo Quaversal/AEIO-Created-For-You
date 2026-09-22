@@ -60,7 +60,7 @@ const TABS = [
     label: "Apps & Games",
     icon: Gamepad2,
     tagline: "Learn through play and interactive tools",
-    desc: "Access our growing library of educational apps and games designed to make learning sticky, engaging, and fun. Perfect for reinforcing skills, exploring new topics, and keeping curious minds active between lessons.",
+    desc: "Access our growing library of educational apps and games designed to supplement learning. Visit our apps page below, games are a one-time purchase.",
     includes: [
       "Curated educational games across core subjects",
       "Interactive skill-building apps and challenges",
