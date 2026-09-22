@@ -57,10 +57,10 @@ const TABS = [
   },
   {
     key: "apps-games",
-    label: "Apps & Games",
+    label: "Apps & Downloadables",
     icon: Gamepad2,
     tagline: "Learn through play and interactive tools",
-    desc: "Access our growing library of educational apps and games designed to supplement learning. Visit our apps page below, games are a one-time purchase.",
+    desc: "Access our growing library of educational apps and downloadables designed to supplement learning. Visit our apps page below, games are a one-time purchase.",
     includes: [
       "Curated educational games across core subjects",
       "Interactive skill-building apps and challenges",
